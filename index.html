@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Portfolio</title>
+  <title>Jonah Cha — Portfolio</title>
   <meta name="description" content="Personal website showcasing coding projects." />
-  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:title" content="Jonah Cha — Portfolio" />
   <meta property="og:description" content="Personal website showcasing coding projects." />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="assets/style.css" />
@@ -19,8 +19,8 @@
       <div class="brand">
         <span class="avatar" aria-hidden="true">🧠</span>
         <div>
-          <h1>Your Name</h1>
-          <p class="tagline">Developer • Builder • Problem Solver</p>
+          <h1>Jonah Cha</h1>
+          <p class="tagline">Student • Engineer • Developer</p>
         </div>
       </div>
       <nav class="nav">
@@ -33,9 +33,9 @@
 
   <main>
     <section class="hero container">
-      <h2>Hi, I'm Your Name.</h2>
+      <h2>Hi, I'm Jonah.</h2>
       <p>
-        I build useful things with code. Below are a few projects I’m proud of.
+        I like to build useful things with code. Below are a few projects I’m proud of.
         Looking for collaborators or consulting? Let’s chat.
       </p>
       <div class="cta-row">
@@ -58,15 +58,23 @@
     <section id="about" class="container">
       <h3>About</h3>
       <p>
-        Short bio about you goes here. Mention your focus areas, the tech you love,
-        and what you’re currently exploring. Keep it concise and friendly.
+        I'm majoring in EECS at UC Berkeley. I'm interested in using AI/ML to complement human intelligence.
       </p>
       <ul class="skills">
         <li>Python</li>
         <li>JavaScript</li>
+        <li>C++</li>
+        <li>Java</li>
+        <li>PHP</li>
+        <li>HTML/CSS</li>
+        <li>SQL</li>
         <li>AWS</li>
+        <li>Azure</li>
+        <li>ChatGPT</li>
         <li>Docker</li>
-        <li>LLMs</li>
+        <li>Git</li>
+        <li>React</li>
+        <li>Linux</li>
       </ul>
     </section>
 
@@ -74,16 +82,16 @@
       <h3>Contact</h3>
       <p>Best way to reach me:</p>
       <ul class="contact-list">
-        <li><a href="mailto:you@example.com">you@example.com</a></li>
-        <li><a rel="me" href="https://github.com/yourhandle" target="_blank">GitHub</a></li>
-        <li><a rel="me" href="https://www.linkedin.com/in/yourhandle" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:jonah_cha@berkeley.edu">jonah_cha@berkeley.edu</a></li>
+        <li><a rel="me" href="https://github.com/MERC13" target="_blank">GitHub</a></li>
+        <li><a rel="me" href="https://www.linkedin.com/in/jonah-cha-7610a12b8/" target="_blank">LinkedIn</a></li>
       </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <span>© <span id="year"></span> Your Name</span>
+      <span><span id="year"></span> Jonah Cha</span>
       <span class="spacer">·</span>
       <a href="#top" class="top-link">Back to top ↑</a>
     </div>
@@ -94,27 +102,91 @@
   {
     "projects": [
       {
-        "title": "NDA Drafter GPT",
-        "description": "A custom GPT workflow that drafts NDAs using predefined clauses and client metadata. Packaged as an AWS Lambda + Docker service with vector search via Pinecone.",
-        "tags": ["LLM", "LegalTech"],
-        "tech": ["Python", "AWS Lambda", "Pinecone", "Docker"],
+        "title": "StoaHub",
+        "description": "Standardized national website for speech and debate organization.",
+        "tags": ["Web development"],
+        "tech": ["PHP", "JavaScript", "SQL", "Git"],
+        "repo_url": "#",
+        "demo_url": "https://stoahub.org/"
+      },
+      {
+        "title": "NDA Drafter Assistant",
+        "description": "Tool to draft NDAs based on the user's own clauses.",
+        "tags": ["AI"],
+        "tech": ["Python", "ChatGPT", "AWS"],
         "repo_url": "#",
         "demo_url": "#"
       },
       {
-        "title": "SlideGen Pipeline",
-        "description": "Generates PowerPoint decks from structured JSON using Slide Masters and custom placeholders (e.g., {{TITLE}}). Designed for fast marketing/sales collateral.",
-        "tags": ["Automation", "Presentations"],
-        "tech": ["Python", "PPTX", "AWS", "JSON"],
+        "title": "CSL Search Assistant",
+        "description": "Automated risk compliance screening search tool on the official Consolidated Screening List",
+        "tags": ["AI"],
+        "tech": ["Python", "ChatGPT", "AWS"],
         "repo_url": "#",
         "demo_url": "#"
       },
       {
-        "title": "Legal FAQ Assistant",
-        "description": "A retrieval-augmented chatbot that answers FAQs for a legal department with exact language from source documents.",
-        "tags": ["RAG", "Chatbot"],
-        "tech": ["Python", "OpenAI", "Embeddings"],
+        "title": "Timesheet Agent",
+        "description": "Automatically scrapes emails and calendar events to generate timesheets",
+        "tags": ["AI"],
+        "tech": ["Azure"],
         "repo_url": "#",
+        "demo_url": "#"
+      },
+      {
+        "title": "Template Harmonizer Assistant",
+        "description": "Reviews and compares contract templates to reconcile differences and outputs a unified template",
+        "tags": ["AI"],
+        "tech": ["Python", "ChatGPT", "AWS"],
+        "repo_url": "#",
+        "demo_url": "#"
+      },
+      {
+        "title": "Contract Analyzer Assistant",
+        "description": "Reviews contracts according to company playbook and outputs a redlined contract",
+        "tags": ["AI"],
+        "tech": ["Python", "ChatGPT", "AWS"],
+        "repo_url": "#",
+        "demo_url": "#"
+      },
+      {
+        "title": "Invoice Review Assistant",
+        "description": "Reviews invoices according to company billing guidelines and identifies violations",
+        "tags": ["AI"],
+        "tech": ["Python", "ChatGPT", "AWS", "Pinecone"],
+        "repo_url": "#",
+        "demo_url": "#"
+      },
+      {
+        "title": "PPT Creation Assistant",
+        "description": "Generates a PPT deck based on user input and company template",
+        "tags": ["AI"],
+        "tech": ["Python", "ChatGPT", "AWS"],
+        "repo_url": "#",
+        "demo_url": "#"
+      },
+      {
+        "title": "Pneumonia Diagnosis Model",
+        "description": "CNN model to diagnose pneumonia from chest X-rays",
+        "tags": ["ML"],
+        "tech": ["Python"],
+        "repo_url": "https://github.com/MERC13/X-ray-CNN",
+        "demo_url": "#"
+      },
+      {
+        "title": "CIFAR-10 GAN",
+        "description": "GAN model trained on CIFAR-10 dataset",
+        "tags": ["ML"],
+        "tech": ["Python"],
+        "repo_url": "https://github.com/MERC13/GAN-test",
+        "demo_url": "#"
+      },
+      {
+        "title": "Stock Price Analysis",
+        "description": "LSTM model trained on stock prices to predict future prices; user interface to visualize results",
+        "tags": ["ML", "Web development"],
+        "tech": ["Python", "JavaScript", "HTML/CSS"],
+        "repo_url": "https://github.com/MERC13/stockproject",
         "demo_url": "#"
       }
     ]
