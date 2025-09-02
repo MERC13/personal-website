@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal website showcasing coding projects." />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Personal website showcasing coding projects." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="data:,">
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="avatar" aria-hidden="true">🧠</span>
+        <div>
+          <h1>Your Name</h1>
+          <p class="tagline">Developer • Builder • Problem Solver</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h2>Hi, I'm Your Name.</h2>
+      <p>
+        I build useful things with code. Below are a few projects I’m proud of.
+        Looking for collaborators or consulting? Let’s chat.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#projects">See Projects</a>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <div class="section-head">
+        <h3>Projects</h3>
+        <div class="controls">
+          <input id="searchInput" aria-label="Search projects" placeholder="Search projects…" />
+          <div id="tagChips" class="chips" aria-label="Tag filters"></div>
+        </div>
+      </div>
+      <div id="projectsGrid" class="grid"></div>
+    </section>
+
+    <section id="about" class="container">
+      <h3>About</h3>
+      <p>
+        Short bio about you goes here. Mention your focus areas, the tech you love,
+        and what you’re currently exploring. Keep it concise and friendly.
+      </p>
+      <ul class="skills">
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>AWS</li>
+        <li>Docker</li>
+        <li>LLMs</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container">
+      <h3>Contact</h3>
+      <p>Best way to reach me:</p>
+      <ul class="contact-list">
+        <li><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><a rel="me" href="https://github.com/yourhandle" target="_blank">GitHub</a></li>
+        <li><a rel="me" href="https://www.linkedin.com/in/yourhandle" target="_blank">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Your Name</span>
+      <span class="spacer">·</span>
+      <a href="#top" class="top-link">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Edit the JSON below to add your projects. No server needed. -->
+  <script id="projects-data" type="application/json">
+  {
+    "projects": [
+      {
+        "title": "NDA Drafter GPT",
+        "description": "A custom GPT workflow that drafts NDAs using predefined clauses and client metadata. Packaged as an AWS Lambda + Docker service with vector search via Pinecone.",
+        "tags": ["LLM", "LegalTech"],
+        "tech": ["Python", "AWS Lambda", "Pinecone", "Docker"],
+        "repo_url": "#",
+        "demo_url": "#"
+      },
+      {
+        "title": "SlideGen Pipeline",
+        "description": "Generates PowerPoint decks from structured JSON using Slide Masters and custom placeholders (e.g., {{TITLE}}). Designed for fast marketing/sales collateral.",
+        "tags": ["Automation", "Presentations"],
+        "tech": ["Python", "PPTX", "AWS", "JSON"],
+        "repo_url": "#",
+        "demo_url": "#"
+      },
+      {
+        "title": "Legal FAQ Assistant",
+        "description": "A retrieval-augmented chatbot that answers FAQs for a legal department with exact language from source documents.",
+        "tags": ["RAG", "Chatbot"],
+        "tech": ["Python", "OpenAI", "Embeddings"],
+        "repo_url": "#",
+        "demo_url": "#"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
