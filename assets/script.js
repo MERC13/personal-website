@@ -42,13 +42,23 @@
     return tagOk && hay.includes(txt);
   }
 
+  function validLink(u) {
+    return typeof u === "string" && (u = u.trim()) && u !== "#";
+  }
+  
   function projectCard(p) {
     const tags = (p.tags || []).map(t => `<span class="badge" aria-label="tag ${t}">#${t}</span>`).join("");
     const tech = (p.tech || []).map(t => `<span class="pill">${t}</span>`).join("");
-    const actions = `
-      ${p.repo_url ? `<a class="btn" href="${p.repo_url}" target="_blank" rel="noopener">Code ↗</a>` : ""}
-      ${p.demo_url ? `<a class="btn" href="${p.demo_url}" target="_blank" rel="noopener">Demo ↗</a>` : ""}
-    `;
+  
+    const links = [];
+    if (validLink(p.repo_url)) {
+      links.push(`<a class="btn" href="${p.repo_url}" target="_blank" rel="noopener">Code ↗</a>`);
+    }
+    if (validLink(p.demo_url)) {
+      links.push(`<a class="btn" href="${p.demo_url}" target="_blank" rel="noopener">Demo ↗</a>`);
+    }
+    const actions = links.length ? `<div class="actions">${links.join("")}</div>` : "";
+  
     return `
       <article class="card" aria-labelledby="t-${slug(p.title)}">
         <header>
@@ -57,10 +67,11 @@
         </header>
         <p>${p.description || ""}</p>
         <div class="tech">${tech}</div>
-        <div class="actions">${actions}</div>
+        ${actions}
       </article>
     `;
   }
+  
 
   function slug(s) {
     return (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
