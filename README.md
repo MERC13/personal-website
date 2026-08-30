@@ -45,5 +45,6 @@ Two rules worth keeping:
 
 ## Not in this repo
 
-The résumé PDFs are gitignored on purpose. They contain a phone number, and
-anything committed to a public repo persists in history and in forks.
+The résumé PDFs are deliberately kept out. They carry a phone number, and
+anything committed to a public repo persists in history and in forks even
+after it is deleted. The site is meant to stand on its own instead.

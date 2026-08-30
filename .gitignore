@@ -1,7 +1,3 @@
-# Résumé PDFs are kept locally only. They contain a phone number, and anything
-# committed to a public repo stays in git history (and in forks) permanently.
-*.pdf
-
 # OS / editor cruft
 Thumbs.db
 .DS_Store

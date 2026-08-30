@@ -524,6 +524,7 @@
   [data-kind="engineering"] .timeline__bar {
     background: color-mix(in oklab, var(--accent-2) 55%, var(--bg));
   }
+  [data-kind="engineering"] .timeline__bar--now { background: var(--accent-2); }
 
   /* Entry — the date-rail two-column unit used by Experience, Work, Education */
   .entry {
