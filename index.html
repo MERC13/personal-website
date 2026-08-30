@@ -119,27 +119,27 @@
         <div class="timeline__bandwrap">
           <span class="timeline__band" style="--from:59.3%;--span:29.6%"></span>
         </div>
-        <div class="timeline__row">
+        <div class="timeline__row" data-kind="research">
           <span class="timeline__name">UCSF</span>
           <span class="timeline__track"><i class="timeline__bar timeline__bar--now" style="--from:74.1%;--span:25.9%"></i></span>
         </div>
-        <div class="timeline__row">
+        <div class="timeline__row" data-kind="research">
           <span class="timeline__name">Mercor</span>
           <span class="timeline__track"><i class="timeline__bar timeline__bar--now" style="--from:59.3%;--span:40.7%"></i></span>
         </div>
-        <div class="timeline__row">
+        <div class="timeline__row" data-kind="research">
           <span class="timeline__name">Haas</span>
           <span class="timeline__track"><i class="timeline__bar" style="--from:59.3%;--span:29.6%"></i></span>
         </div>
-        <div class="timeline__row">
+        <div class="timeline__row" data-kind="research">
           <span class="timeline__name">BAIR</span>
           <span class="timeline__track"><i class="timeline__bar" style="--from:59.3%;--span:11.1%"></i></span>
         </div>
-        <div class="timeline__row">
+        <div class="timeline__row" data-kind="engineering">
           <span class="timeline__name">Stoa USA</span>
           <span class="timeline__track"><i class="timeline__bar" style="--from:3.7%;--span:51.9%"></i></span>
         </div>
-        <div class="timeline__row">
+        <div class="timeline__row" data-kind="engineering">
           <span class="timeline__name">Uplevel Ops</span>
           <span class="timeline__track"><i class="timeline__bar" style="--from:0%;--span:55.6%"></i></span>
         </div>
@@ -155,9 +155,13 @@
       <figcaption class="timeline__cap u-nums">
         Three concurrent research roles, September 2025 – May 2026.
       </figcaption>
+      <div class="timeline__legend" aria-hidden="true">
+        <span class="is-research"><i></i>Research</span>
+        <span class="is-eng"><i></i>Engineering</span>
+      </div>
     </figure>
 
-    <article class="entry">
+    <article class="entry" data-kind="research">
       <p class="entry__meta u-nums"><span>2026 —</span><span>Present</span></p>
       <div class="entry__body">
         <h3 class="entry__title">University of California, San Francisco</h3>
@@ -173,7 +177,7 @@
       </div>
     </article>
 
-    <article class="entry">
+    <article class="entry" data-kind="research">
       <p class="entry__meta u-nums"><span>2025 —</span><span>Present</span></p>
       <div class="entry__body">
         <h3 class="entry__title">Mercor Intelligence</h3>
@@ -181,13 +185,14 @@
         <p class="entry__desc">
           Post-training work for AI agents, with a focus on reinforcement learning. I build
           training examples and the ML workflows around them, and design evaluations for agent
-          behaviour. The projects are unreleased, so the details stop here.
+          behaviour.
         </p>
         <p class="entry__tech">Python · PyTorch · scikit-learn · XGBoost</p>
       </div>
+      <p class="entry__note">Projects are unreleased, so the details stop here.</p>
     </article>
 
-    <article class="entry">
+    <article class="entry" data-kind="research">
       <p class="entry__meta u-nums"><span>2025 —</span><span>2026</span></p>
       <div class="entry__body">
         <h3 class="entry__title">Haas School of Business</h3>
@@ -201,7 +206,7 @@
       </div>
     </article>
 
-    <article class="entry">
+    <article class="entry" data-kind="research">
       <p class="entry__meta u-nums"><span>2025</span></p>
       <div class="entry__body">
         <h3 class="entry__title">Berkeley Artificial Intelligence Research (BAIR)</h3>
@@ -217,7 +222,7 @@
       </div>
     </article>
 
-    <article class="entry">
+    <article class="entry" data-kind="engineering">
       <p class="entry__meta u-nums"><span>2024 —</span><span>2025</span></p>
       <div class="entry__body">
         <h3 class="entry__title">Stoa USA</h3>
@@ -234,7 +239,7 @@
       </div>
     </article>
 
-    <article class="entry">
+    <article class="entry" data-kind="engineering">
       <p class="entry__meta u-nums"><span>2024 —</span><span>2025</span></p>
       <div class="entry__body">
         <h3 class="entry__title">Uplevel Ops Legal Consulting</h3>
@@ -246,11 +251,10 @@
           guidelines, timesheet generation from calendar and email, consolidated-screening-list
           search, template harmonisation, and deck generation. Review times dropped by more than
           half, and Uplevel estimated the automation delivered over $2 million in client value.
-          The code is client-owned, so there is nothing to link — happy to walk through the
-          architecture.
         </p>
         <p class="entry__tech">Python · Docker · AWS · Azure · Pinecone · LLM APIs</p>
       </div>
+      <p class="entry__note">Code is client-owned — nothing to link. Happy to walk through the architecture.</p>
     </article>
   </section>
 
@@ -306,7 +310,6 @@
       <p class="entry__meta u-nums"><span>Jun 2026</span></p>
       <div class="entry__body">
         <h3 class="entry__title">Lecture Assistant</h3>
-        <p class="entry__role">with Ben Hung and Lucas Zheng</p>
         <p class="entry__desc">
           Lecture audio streams in over WebSockets, goes to Deepgram for transcription, and lands
           in Redis Stack, which doubles as the low-latency vector store. An asyncio FastAPI
@@ -319,6 +322,7 @@
         </p>
         <p class="entry__tech">FastAPI · Redis Stack · Deepgram · Claude · Arize AX · Docker</p>
       </div>
+      <p class="entry__note">With Ben Hung and Lucas Zheng. No public repo yet.</p>
     </article>
 
     <article class="entry">
@@ -433,7 +437,7 @@
   </section>
 
 
-  <section id="also" class="section page">
+  <section id="also" class="section section--tinted page">
     <h2 class="section__label">Also built</h2>
     <p class="section__note">Smaller experiments and coursework. Code only, no write-ups.</p>
 
@@ -533,9 +537,10 @@
         <p class="entry__desc">
           Coursework: Computer Programs (A), Data Structures (A+), Discrete Mathematics and
           Probability Theory (A), Machine Learning (A+), Computer Vision (in progress), Computer
-          Architecture (in progress). Deep Learning and Reinforcement Learning audited.
+          Architecture (in progress).
         </p>
       </div>
+      <p class="entry__note">Deep Learning and Reinforcement Learning audited.</p>
     </article>
 
     <h2 class="section__label section__label--sub">Skills</h2>

@@ -68,10 +68,14 @@
   --text-muted:   light-dark(#57534E, #A8A29B);
   --text-subtle:  light-dark(#78716C, #857F78);
 
-  /* Accent — deliberately used in very few places */
-  --accent:       light-dark(#1B44B8, #8AB4FF);
-  --accent-hover: light-dark(#153594, #A9C7FF);
-  --select-bg:    light-dark(#DDE5FF, #23304F);
+  /* Accents. Two hues, and the second one has a job: ink blue marks research
+     roles, burnt amber marks engineering roles. Anything that is not one of
+     those two things stays neutral. */
+  --accent:         light-dark(#1B44B8, #8AB4FF);
+  --accent-hover:   light-dark(#153594, #A9C7FF);
+  --accent-2:       light-dark(#8A5314, #E3A75E);
+  --accent-2-hover: light-dark(#6E4110, #EEBC80);
+  --select-bg:      light-dark(#DDE5FF, #23304F);
 
   /* Type */
   --font-sans: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif;
@@ -132,6 +136,7 @@
     --line: #E0DCD4;        --line-strong: #C9C3B8;   --line-control: #8A8580;
     --text: #1A1918;        --text-muted: #57534E;    --text-subtle: #78716C;
     --accent: #1B44B8;      --accent-hover: #153594;  --select-bg: #DDE5FF;
+    --accent-2: #8A5314;    --accent-2-hover: #6E4110;
   }
 }
 
@@ -393,7 +398,7 @@
     font-weight: 450;
     letter-spacing: var(--ls-caps);
     text-transform: uppercase;
-    color: var(--text-subtle);
+    color: var(--accent);
     margin-block-end: var(--space-sm);
   }
 
@@ -473,11 +478,51 @@
 
   .timeline__cap {
     font-size: var(--fs-sm);
-    color: var(--text-subtle);
+    color: var(--text-muted);
 
     @media (min-width: 40rem) {
       padding-inline-start: calc(10rem + var(--space-lg));
     }
+  }
+
+  .timeline__legend {
+    display: none;
+    gap: var(--space-md);
+    margin-block-start: var(--space-2xs);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+
+    @media (min-width: 40rem) {
+      display: flex;
+      padding-inline-start: calc(10rem + var(--space-lg));
+    }
+
+    & span { display: flex; align-items: center; gap: .4rem; }
+    & i { inline-size: .7rem; block-size: .7rem; }
+  }
+
+  .timeline__legend .is-research   { color: var(--accent); }
+  .timeline__legend .is-research i { background: var(--accent); }
+  .timeline__legend .is-eng        { color: var(--accent-2); }
+  .timeline__legend .is-eng i      { background: var(--accent-2); }
+
+  /* Kind colouring. Blue = research, amber = engineering. Applied to the date
+     rail and the timeline, never to body copy. */
+  [data-kind="research"] .entry__meta,
+  [data-kind="research"] .timeline__name { color: var(--accent); }
+
+  [data-kind="engineering"] .entry__meta,
+  [data-kind="engineering"] .timeline__name { color: var(--accent-2); }
+
+  [data-kind="research"] .timeline__bar {
+    background: color-mix(in oklab, var(--accent) 45%, var(--bg));
+  }
+  [data-kind="research"] .timeline__bar--now { background: var(--accent); }
+
+  [data-kind="engineering"] .timeline__bar {
+    background: color-mix(in oklab, var(--accent-2) 55%, var(--bg));
   }
 
   /* Entry — the date-rail two-column unit used by Experience, Work, Education */
@@ -544,6 +589,40 @@
     font-size: var(--fs-sm);
   }
 
+  /* Margin notes. Asides that would otherwise weigh down a body sentence —
+     collaborators, NDA caveats, "nothing to link". Below 56rem they fold
+     inline under the entry. */
+  .entry__note {
+    margin-block-start: var(--space-xs);
+    font-size: var(--fs-sm);
+    font-style: italic;
+    color: var(--text-subtle);
+    max-inline-size: var(--measure-entry);
+  }
+
+  @media (min-width: 40rem) {
+    .entry__note { grid-column: 2; }
+  }
+
+  /* The 8rem margin is sized to the dead space already sitting to the right of
+     a 62ch measure, so adding it does not reflow the prose. */
+  @media (min-width: 56rem) {
+    .entry {
+      grid-template-columns: 10rem minmax(0, 1fr) 8rem;
+    }
+    .entry__note {
+      grid-column: 3; grid-row: 1;
+      align-self: start;          /* rule hugs the note, not the whole row */
+      margin-block-start: 0;
+      padding-block-start: .4em;
+      padding-inline-start: var(--space-xs);
+      border-inline-start: 1px solid var(--line);
+      font-size: var(--fs-xs);
+      font-style: normal;
+      line-height: 1.5;
+    }
+  }
+
   /* Archive — the compact "also built" rows */
   .archive__item {
     display: grid;
@@ -558,6 +637,30 @@
       gap: var(--space-md);
     }
   }
+
+  /* Tinted ground. Bleeds into the gutter so the rows stay aligned with the
+     sections above rather than indenting. The --text-subtle override is not
+     cosmetic: the default 4.29:1 on this panel is below the 4.5 AA floor. */
+  .section--tinted {
+    --bleed: clamp(.75rem, 2vw, 1.5rem);
+    --text-subtle: light-dark(#6B6560, #948E87);
+
+    margin-block-start: var(--space-section);
+    padding: var(--space-lg) var(--bleed) var(--space-xl);
+    background: var(--bg-subtle);
+    border-radius: 3px;
+
+    /* Widen the box by the bleed rather than using a negative margin — a
+       negative margin-inline would beat .page's `auto` and break centring. */
+    inline-size: calc(min(var(--w-page), 100% - 2 * var(--gutter)) + 2 * var(--bleed));
+    margin-inline: auto;
+  }
+
+  @supports not (color: light-dark(#fff, #000)) {
+    .section--tinted { --text-subtle: #6B6560; }
+  }
+
+  .section--tinted .archive__item:first-child { border-block-start: 0; }
 
   .archive__title { font-weight: 500; }
 
@@ -607,9 +710,9 @@
 
   /* Links */
   .link {
-    color: var(--text);
+    color: var(--accent);
     text-decoration: underline;
-    text-decoration-color: var(--line-strong);
+    text-decoration-color: color-mix(in oklab, var(--accent) 35%, transparent);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
     transition: text-decoration-color var(--dur-fast) var(--ease),
