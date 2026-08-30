@@ -92,15 +92,15 @@
     <h1 class="hero__name">Jonah Cha</h1>
     <p class="hero__lede">
       I work on machine learning systems, and on the evaluation that tells you whether they
-      actually work. At UCSF I'm training diffusion transformers to reconstruct video from fMRI;
+      actually work. At UCSF I’m training diffusion transformers to reconstruct video from fMRI;
       at Mercor I build post-training data and RL environments for AI agents; at Berkeley AI
       Research I helped build CyberGym-E2E, an end-to-end benchmark for AI-generated security
       patches, accepted to the ICLR Workshop on Agentic AI Security. Before that I spent two
       summers shipping production software — a national tournament platform still running 50+
-      events a year, and a set of cloud agents that took a legal consultancy's document review
+      events a year, and a set of cloud agents that took a legal consultancy’s document review
       off manual.
     </p>
-    <p class="hero__meta u-nums">Berkeley, CA · B.S. EECS '28 · GPA 4.00</p>
+    <p class="hero__meta u-nums">Berkeley, CA · B.S. EECS ’28 · GPA 4.00</p>
     <ul class="hero__links">
       <li><a class="link" href="mailto:jonah_cha@berkeley.edu">jonah_cha@berkeley.edu</a></li>
       <li><a class="link" rel="me noopener noreferrer" target="_blank" href="https://github.com/MERC13">GitHub</a></li>
@@ -111,6 +111,51 @@
 
   <section id="experience" class="section page">
     <h2 class="section__label">Experience</h2>
+
+    <!-- Timeline offsets are percentages of a May 2024 – Aug 2026 span (27 months).
+         For a new role: from = (monthsSinceMay2024 / 27) * 100. -->
+    <figure class="timeline">
+      <div class="timeline__chart" aria-hidden="true">
+        <div class="timeline__bandwrap">
+          <span class="timeline__band" style="--from:59.3%;--span:29.6%"></span>
+        </div>
+        <div class="timeline__row">
+          <span class="timeline__name">UCSF</span>
+          <span class="timeline__track"><i class="timeline__bar timeline__bar--now" style="--from:74.1%;--span:25.9%"></i></span>
+        </div>
+        <div class="timeline__row">
+          <span class="timeline__name">Mercor</span>
+          <span class="timeline__track"><i class="timeline__bar timeline__bar--now" style="--from:59.3%;--span:40.7%"></i></span>
+        </div>
+        <div class="timeline__row">
+          <span class="timeline__name">Haas</span>
+          <span class="timeline__track"><i class="timeline__bar" style="--from:59.3%;--span:29.6%"></i></span>
+        </div>
+        <div class="timeline__row">
+          <span class="timeline__name">BAIR</span>
+          <span class="timeline__track"><i class="timeline__bar" style="--from:59.3%;--span:11.1%"></i></span>
+        </div>
+        <div class="timeline__row">
+          <span class="timeline__name">Stoa USA</span>
+          <span class="timeline__track"><i class="timeline__bar" style="--from:3.7%;--span:51.9%"></i></span>
+        </div>
+        <div class="timeline__row">
+          <span class="timeline__name">Uplevel Ops</span>
+          <span class="timeline__track"><i class="timeline__bar" style="--from:0%;--span:55.6%"></i></span>
+        </div>
+        <div class="timeline__row">
+          <span></span>
+          <span class="timeline__ticks">
+            <i style="--from:0%">2024</i>
+            <i style="--from:29.6%">2025</i>
+            <i style="--from:74.1%">2026</i>
+          </span>
+        </div>
+      </div>
+      <figcaption class="timeline__cap u-nums">
+        Three concurrent research roles, September 2025 – May 2026.
+      </figcaption>
+    </figure>
 
     <article class="entry">
       <p class="entry__meta u-nums"><span>2026 —</span><span>Present</span></p>
@@ -195,8 +240,8 @@
         <h3 class="entry__title">Uplevel Ops Legal Consulting</h3>
         <p class="entry__role">AI Consultant</p>
         <p class="entry__desc">
-          Built and shipped a suite of cloud AI agents for a legal consultancy's Fortune 500
-          clients, including Adobe and Sony: NDA drafting from a firm's own clause library,
+          Built and shipped a suite of cloud AI agents for a legal consultancy’s Fortune 500
+          clients, including Adobe and Sony: NDA drafting from a firm’s own clause library,
           contract redlining against a client playbook, invoice review against billing
           guidelines, timesheet generation from calendar and email, consolidated-screening-list
           search, template harmonisation, and deck generation. Review times dropped by more than
@@ -222,11 +267,11 @@
           action-conditioned latent dynamics model — a transformer over DINOv2 features — on
           LIBERO manipulation rollouts, then used CEM to search for the minimal action edit that
           would have rescued a failed episode, replaying every candidate in MuJoCo to check it for
-          real rather than trusting the model's own prediction. The model does localise faults:
+          real rather than trusting the model’s own prediction. The model does localise faults:
           AUROC 0.88–0.92 for flagging the failure window, and the learned critic ranks candidate
           edits above chance (0.62–0.71). But across eight configurations, nothing beat random
           edits unless it was handed the oracle fault window. It is published as a negative result
-          with the full ablation table, because the gap between "has signal" and "is useful" is
+          with the full ablation table, because the gap between “has signal” and “is useful” is
           the entire finding.
         </p>
         <p class="entry__tech">Python · PyTorch · JAX · MuJoCo · LIBERO</p>
@@ -239,13 +284,13 @@
     <article class="entry">
       <p class="entry__meta u-nums"><span>Jun 2026</span></p>
       <div class="entry__body">
-        <h3 class="entry__title">RL over a Frozen VLA's Steering Interface</h3>
+        <h3 class="entry__title">RL over a Frozen VLA’s Steering Interface</h3>
         <p class="entry__desc">
           Fine-tuning a vision-language-action policy is expensive; steering one through its
           natural-language interface is not. I froze π0.5 and trained a clipped-PPO actor-critic
           with GAE over a categorical policy whose action space is a menu of per-task
-          instructions — so the RL problem becomes "what should I tell the robot next," not "what
-          torques should it apply." Most of the real work was infrastructure: a Modal-based
+          instructions — so the RL problem becomes “what should I tell the robot next,” not “what
+          torques should it apply.” Most of the real work was infrastructure: a Modal-based
           rollout cluster with a hardware-aware local/cloud split, WebSocket serving for the
           frozen policy, and a unit-tested audit pipeline so every number in the results table
           traces back to the rollout that produced it.
@@ -287,7 +332,7 @@
           <code>nfl_data_py</code> play-by-play data; position-specific models for QB, RB, WR and
           TE sit behind a Flask API that a Manifest V3 extension calls to overlay projections
           directly on top of the numbers ESPN and Yahoo are already showing you. On the weeks I
-          backtested, it beat both platforms' published projections.
+          backtested, it beat both platforms’ published projections.
         </p>
         <p class="entry__tech">PyTorch · rtdl · Optuna · nfl_data_py · Flask · JavaScript</p>
         <p class="entry__links">
@@ -337,10 +382,10 @@
       <div class="entry__body">
         <h3 class="entry__title">Deep Q-Network for Atari, from Scratch</h3>
         <p class="entry__desc">
-          DeepMind's 2015 Nature DQN, reimplemented without an RL library. Experience replay, an
+          DeepMind’s 2015 Nature DQN, reimplemented without an RL library. Experience replay, an
           ε-greedy exploration schedule, a target network, and Bellman TD-error updates with
           gradient clipping — all written by hand against raw frames from the Arcade Learning
-          Environment. Building the machinery yourself is the point: the paper's hyperparameters
+          Environment. Building the machinery yourself is the point: the paper’s hyperparameters
           stop looking arbitrary once you have watched training collapse without each one.
         </p>
         <p class="entry__tech">PyTorch · Gymnasium · ALE · NumPy · OpenCV</p>

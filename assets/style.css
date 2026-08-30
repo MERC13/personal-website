@@ -191,7 +191,16 @@
     text-wrap: balance;
   }
 
-  p { text-wrap: pretty; }
+  p {
+    text-wrap: pretty;
+    /* Hangs an opening quote into the margin so the left edge stays optically
+       flush. Safari-only today; degrades to nothing, which is the right failure
+       mode for a purely optical refinement. */
+    hanging-punctuation: first last;
+  }
+
+  /* Long library names and repo paths must not blow out a narrow column. */
+  .entry__tech, .archive__title, .archive__desc { overflow-wrap: break-word; }
 
   a { color: inherit; }
 
@@ -395,6 +404,80 @@
     font-size: var(--fs-sm);
     color: var(--text-subtle);
     max-inline-size: var(--measure-entry);
+  }
+
+  /* Timeline — makes role concurrency visible, which a chronological list can't.
+     Chart is desktop-only; the caption carries the same fact everywhere else, so
+     nothing is lost on mobile or to a screen reader. */
+  .timeline { margin: 0 0 var(--space-md); }
+
+  .timeline__chart { display: none; }
+
+  @media (min-width: 40rem) {
+    .timeline__chart {
+      display: block; position: relative;
+      margin-block-end: var(--space-2xs);
+    }
+  }
+
+  .timeline__row {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    column-gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .timeline__name {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--text-subtle);
+  }
+
+  .timeline__track { position: relative; block-size: 1.125rem; }
+
+  .timeline__bar {
+    position: absolute; inset-block: 4px;
+    inset-inline-start: var(--from); inline-size: var(--span);
+    background: var(--line-strong);
+  }
+
+  .timeline__bar--now { background: var(--accent); }
+
+  .timeline__bandwrap {
+    position: absolute; inset-block: 0 1.4rem;
+    inset-inline-start: calc(10rem + var(--space-lg)); inset-inline-end: 0;
+    pointer-events: none;
+  }
+
+  .timeline__band {
+    position: absolute; inset-block: 0;
+    inset-inline-start: var(--from); inline-size: var(--span);
+    background: color-mix(in oklab, var(--accent) 7%, transparent);
+    border-inline: 1px solid color-mix(in oklab, var(--accent) 22%, transparent);
+  }
+
+  .timeline__ticks {
+    position: relative; display: block; block-size: 1.4rem;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .timeline__ticks i {
+    position: absolute; inset-block-start: 0; inset-inline-start: var(--from);
+    padding-inline-start: .3rem; padding-block-start: .25rem;
+    border-inline-start: 1px solid var(--line);
+    font-family: var(--font-mono); font-size: .6875rem; font-style: normal;
+    color: var(--text-subtle);
+  }
+
+  .timeline__cap {
+    font-size: var(--fs-sm);
+    color: var(--text-subtle);
+
+    @media (min-width: 40rem) {
+      padding-inline-start: calc(10rem + var(--space-lg));
+    }
   }
 
   /* Entry — the date-rail two-column unit used by Experience, Work, Education */
