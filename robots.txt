@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://merc13.github.io/personal-website/sitemap.xml
