@@ -10,3 +10,6 @@ __pycache__/
 
 # Source notes for the UCSF demo; private working notes, not site content
 neuro_RESULTS.md
+
+# Original photo; the site uses the crops in assets/img/
+/headshot.jpg

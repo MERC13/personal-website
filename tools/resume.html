@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Source of assets/jonah-cha-resume.pdf. Print with tools/print_resume.sh.
+     Never add a phone number: this file and the PDF are public. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jonah Cha — Resume</title>
+<style>
+@font-face { font-family: "STIX Two Text"; src: url("../assets/fonts/stix-two-text.woff2") format("woff2"); font-weight: 400 700; }
+@font-face { font-family: "Inter"; src: url("../assets/fonts/inter-text.woff2") format("woff2"); font-weight: 400 700; }
+@page { size: Letter; margin: 0.42in 0.5in; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 9pt/1.32 Inter, Arial, sans-serif; color: #111620; }
+a { color: inherit; text-decoration: none; }
+h1 { margin: 0; font: 600 22pt/1 "STIX Two Text", Georgia, serif; letter-spacing: -.01em; }
+.contact { margin-top: 4pt; color: #3E4656; font-size: 8.8pt; }
+.contact span + span::before { content: " · "; color: #9AA1AE; }
+h2 { margin: 8pt 0 3pt; padding-bottom: 2pt; border-bottom: 1.2pt solid #00808C; font: 600 11.5pt/1 "STIX Two Text", Georgia, serif; color: #00636D; }
+.e { margin-top: 4pt; break-inside: avoid; }
+.e__h { display: flex; justify-content: space-between; gap: 12pt; }
+.e__t { font-weight: 600; }
+.e__t i { font-style: normal; font-weight: 400; color: #3E4656; }
+.e__d { flex: none; color: #3E4656; font-size: 8.8pt; }
+ul { margin: 2pt 0 0; padding-left: 11pt; }
+li { margin: 1pt 0; }
+li::marker { color: #00808C; }
+.muted { color: #3E4656; }
+.url { color: #00636D; font-size: 8.6pt; }
+.grid { display: grid; grid-template-columns: 7.2em 1fr; gap: 1.5pt 8pt; }
+.grid b { font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Jonah Cha</h1>
+<p class="contact"><span><a href="mailto:jonah_cha@berkeley.edu">jonah_cha@berkeley.edu</a></span><span><a href="https://merc13.github.io/personal-website/">merc13.github.io/personal-website</a></span><span><a href="https://github.com/MERC13">github.com/MERC13</a></span><span><a href="https://www.linkedin.com/in/jonah-cha-7610a12b8/">linkedin.com/in/jonah-cha-7610a12b8</a></span><span>Berkeley, CA</span></p>
+
+<h2>Education</h2>
+<div class="e">
+  <div class="e__h"><span class="e__t">University of California, Berkeley <i>· B.S. Electrical Engineering &amp; Computer Science · GPA 4.00</i></span><span class="e__d">Expected May 2028</span></div>
+  <p class="muted" style="margin:2pt 0 0">Coursework: Machine Learning (A+), Data Structures (A+), Structure &amp; Interpretation of Computer Programs (A), Discrete Math &amp; Probability (A); Deep Learning and Reinforcement Learning (audited); Computer Vision, Computer Architecture (in progress)</p>
+</div>
+
+<h2>Experience</h2>
+<div class="e">
+  <div class="e__h"><span class="e__t">UCSF <i>· Researcher, two projects</i></span><span class="e__d">Jan 2026 – present</span></div>
+  <ul>
+    <li>Brain decoding: reconstructing images and video from fMRI with a small fMRI→CLIP map driving frozen diffusion generators, across four public datasets.</li>
+    <li>Held-out 2-way identification 0.955 across all 8 NSD subjects; top-1 retrieval 155× chance among 897 unseen images; found and fixed a preprocessing bug that had scrambled image–scan pairs.</li>
+    <li>Clinical radiology: deep learning and quantitative imaging for early detection and risk stratification.</li>
+  </ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">UC Berkeley <i>· Researcher</i></span><span class="e__d">Aug 2026 – present</span></div>
+  <ul><li>Foundation models for RNA: transformer architectures and representation-learning objectives for sequence-to-structure prediction, with compute optimisation on AWS Trainium.</li></ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">Mercor <i>· Machine Learning Engineer</i></span><span class="e__d">Sep 2025 – Aug 2026</span></div>
+  <ul><li>Post-training for AI agents on stealth projects: reinforcement learning for agents, training data, and evaluations of agent behaviour.</li></ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">Berkeley AI Research <i>· Researcher, Dawn Song’s group</i></span><span class="e__d">Sep – Dec 2025</span></div>
+  <ul><li>Co-author (10 of 16) of <b>CyberGym-E2E</b>, ICML 2026: an end-to-end benchmark of AI agents finding, proving and patching 920 real-world vulnerabilities across 139 open-source C/C++ projects. <span class="url">arxiv.org/abs/2606.04460</span></li></ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">Stoa USA <i>· Software Engineering Intern</i></span><span class="e__d">Jun 2024 – Aug 2025</span></div>
+  <ul><li>Built StoaHub, the national web platform of the Stoa speech and debate league (100,000+ user entries, 50+ tournaments a year), including its cross-tournament rankings. <span class="url">stoahub.org</span></li></ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">Uplevel Ops <i>· AI Consultant</i></span><span class="e__d">May 2024 – Aug 2025</span></div>
+  <ul>
+    <li>Cloud AI agents for a legal consultancy’s clients: NDA drafting, contract redlining, and invoice review against billing guidelines; Uplevel estimated over $2 million in client value.</li>
+    <li>Invoice review on AWS (API Gateway, Lambda, events, S3) with Pinecone retrieval and a strict review prompt: a 100-page invoice reviewed in under a minute.</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+<div class="e">
+  <div class="e__h"><span class="e__t">Failure detection with a world model <i>· negative result</i></span><span class="e__d">2026</span></div>
+  <ul><li>A probe on frozen encoder features localises robot-policy failures (AUROC 0.88–0.92), but no deployable search repaired them better than a random edit of the same size. <span class="url">github.com/MERC13/failure-detection-WM</span></li></ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">Steering a frozen π0.5 by its instructions <i>· audit</i></span><span class="e__d">2026</span></div>
+  <ul><li>644 simulated LIBERO episodes over 74 prompts: rephrasing barely moves success and only 2 of 8 tasks show headroom over the original instruction. <span class="url">github.com/MERC13/openpi</span></li></ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">AttentionRetention <i>· with Ben Hung and Lucas Zheng</i></span><span class="e__d">Jun 2026</span></div>
+  <ul><li>Live-lecture tutor: Deepgram transcription, Redis memory and three Claude agents that detect topic boundaries and quiz the student, traced in Arize. <span class="url">github.com/20ben/attentionretention</span></li></ul>
+</div>
+<div class="e">
+  <div class="e__h"><span class="e__t">Deep-learning and scikit-learn builds</span><span class="e__d">2025</span></div>
+  <ul><li>nanoGPT-style GPT-2 with DDP and a HellaSwag eval, a hand-written DQN, LoRA fine-tuning, a DCGAN, transformer fantasy-football forecasts, and classical ML models. <span class="url">github.com/MERC13/Deep-learning</span></li></ul>
+</div>
+
+<h2>Skills &amp; awards</h2>
+<div class="grid">
+  <b>Languages</b><span>Python, C++, Java, JavaScript, PHP, SQL, HTML/CSS</span>
+  <b>ML &amp; infra</b><span>PyTorch, JAX, HuggingFace, AWS (Lambda, S3, Trainium), Docker, Linux, Git, Redis, Pinecone</span>
+  <b>Agents</b><span>LangChain, LangGraph, LangSmith, AutoGen, MCP, Claude</span>
+  <b>Awards</b><span>SAT 1600/1600, PSAT 1520/1520, AP Scholar with Distinction, 2× National Gold Medal Debater, Presidential Scholar Candidate</span>
+</div>
+</body>
+</html>
