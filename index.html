@@ -1,583 +1,585 @@
 <!DOCTYPE html>
 <html lang="en" id="top">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
 
 <title>Jonah Cha — ML research &amp; engineering · UC Berkeley EECS</title>
-<meta name="description" content="Jonah Cha is a UC Berkeley EECS student working on machine learning research and engineering: fMRI-to-video diffusion models at UCSF, agent post-training at Mercor, and the CyberGym-E2E security benchmark at Berkeley AI Research.">
+<meta name="description" content="Jonah Cha is a UC Berkeley EECS student (expected May 2028) working on ML research and engineering: brain decoding and clinical imaging at UCSF, RNA foundation models at UC Berkeley, and co-author of CyberGym-E2E (ICML 2026).">
 <meta name="author" content="Jonah Cha">
 <link rel="canonical" href="https://merc13.github.io/personal-website/">
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Jonah Cha — ML research &amp; engineering">
-<meta property="og:description" content="UC Berkeley EECS. Diffusion transformers for fMRI video reconstruction at UCSF, agent post-training at Mercor, and the CyberGym-E2E benchmark at Berkeley AI Research.">
+<meta property="og:description" content="UC Berkeley EECS, expected May 2028. Brain decoding at UCSF, RNA foundation models at UC Berkeley, and co-author of CyberGym-E2E, ICML 2026.">
 <meta property="og:url" content="https://merc13.github.io/personal-website/">
 <meta property="og:image" content="https://merc13.github.io/personal-website/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Jonah Cha — ML research and engineering, UC Berkeley EECS">
+<meta property="og:image:alt" content="Jonah Cha, ML research and engineering">
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="theme-color" content="#FCFBF9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
-
+<meta name="theme-color" content="#0B0E14">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/inter-latin-var.woff2">
+<link rel="preload" href="assets/fonts/stix-two-text.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Must be blocking and before the stylesheet, or the stored theme flashes. -->
+<!-- Blocking, before the stylesheet, so a stored theme doesn't flash. The key is prefixed because
+     every merc13.github.io project shares this origin's localStorage. -->
 <script>
-  try {
-    var t = localStorage.getItem("theme");
-    if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
-  } catch (e) {}
+  (function () {
+    try {
+      var t = localStorage.getItem("jc:theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+    document.documentElement.classList.add("js");
+  })();
 </script>
 
-<link rel="stylesheet" href="assets/style.css">
-<script defer src="assets/script.js"></script>
+<link rel="stylesheet" href="assets/style.css?v=20261014">
+<script defer src="assets/data.js?v=20261014"></script>
+<script defer src="assets/script.js?v=20261014"></script>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Jonah Cha",
-    "url": "https://merc13.github.io/personal-website/",
-    "email": "jonah_cha@berkeley.edu",
-    "jobTitle": "Machine Learning Researcher and Engineer",
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "University of California, Berkeley"
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://merc13.github.io/personal-website/#page",
+      "url": "https://merc13.github.io/personal-website/",
+      "dateModified": "2026-10-14",
+      "mainEntity": { "@id": "https://merc13.github.io/personal-website/#person" }
     },
-    "knowsAbout": [
-      "Machine learning",
-      "Reinforcement learning",
-      "World models",
-      "AI agent evaluation",
-      "Deep learning"
-    ],
-    "sameAs": [
-      "https://github.com/MERC13",
-      "https://www.linkedin.com/in/jonah-cha-7610a12b8/"
-    ]
-  }
+    {
+      "@type": "Person",
+      "@id": "https://merc13.github.io/personal-website/#person",
+      "name": "Jonah Cha",
+      "url": "https://merc13.github.io/personal-website/",
+      "email": "mailto:jonah_cha@berkeley.edu",
+      "jobTitle": "Researcher",
+      "affiliation": [
+        { "@type": "CollegeOrUniversity", "name": "University of California, Berkeley" },
+        { "@type": "Organization", "name": "University of California, San Francisco" }
+      ],
+      "memberOf": { "@type": "CollegeOrUniversity", "name": "University of California, Berkeley" },
+      "sameAs": [
+        "https://github.com/MERC13",
+        "https://www.linkedin.com/in/jonah-cha-7610a12b8/",
+        "https://openreview.net/profile?id=~Jonah_Cha1",
+        "https://dblp.org/pid/439/6114.html",
+        "https://www.semanticscholar.org/author/2433766526"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://proceedings.mlr.press/v306/shi26r.html",
+      "headline": "CyberGym-E2E: Scalable Real-World Benchmark for AI Agents’ End-to-End Cybersecurity Capabilities",
+      "url": "https://proceedings.mlr.press/v306/shi26r.html",
+      "sameAs": ["https://arxiv.org/abs/2606.04460", "https://openreview.net/forum?id=jXaBRLQrcM"],
+      "datePublished": "2026-09-29",
+      "pagination": "112094–112108",
+      "isPartOf": {
+        "@type": "PublicationVolume",
+        "volumeNumber": "306",
+        "name": "Proceedings of the 43rd International Conference on Machine Learning"
+      },
+      "author": [
+        { "@type": "Person", "name": "Tianneng Shi" },
+        { "@type": "Person", "name": "Robin Rheem" },
+        { "@type": "Person", "name": "Dongwei Jiang" },
+        { "@type": "Person", "name": "Mona Wang" },
+        { "@type": "Person", "name": "Francisco De La Riega" },
+        { "@type": "Person", "name": "Zhun Wang" },
+        { "@type": "Person", "name": "Jingzhi Jiang" },
+        { "@type": "Person", "name": "Alexander Cheung" },
+        { "@type": "Person", "name": "Sean Tai" },
+        { "@id": "https://merc13.github.io/personal-website/#person" },
+        { "@type": "Person", "name": "Jianhong Tu" },
+        { "@type": "Person", "name": "Gabriel Han" },
+        { "@type": "Person", "name": "Chenguang Wang" },
+        { "@type": "Person", "name": "Jingxuan He" },
+        { "@type": "Person", "name": "Wenbo Guo" },
+        { "@type": "Person", "name": "Dawn Song" }
+      ]
+    }
+  ]
 }
 </script>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<p id="status" class="u-vh" role="status"></p>
 
-<header class="site-header">
-  <div class="page site-header__inner">
-    <a class="site-header__name" href="#top">Jonah Cha</a>
-    <nav class="nav" aria-label="Sections">
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="hdr__home" href="#top"><span class="hdr__mark" aria-hidden="true"></span>Jonah Cha</a>
+    <nav class="hdr__nav" aria-label="Sections">
       <a href="#experience">Experience</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
     </nav>
-    <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
-      <svg class="theme-toggle__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M12 5a7 7 0 0 1 0 14z" fill="currentColor"/>
-      </svg>
+    <a class="hdr__resume" href="assets/jonah-cha-resume.pdf">Resume<span class="u-vh"> (PDF)</span></a>
+    <button class="theme" type="button" aria-label="Switch theme">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
     </button>
   </div>
 </header>
 
 <main id="main" tabindex="-1">
 
-  <section class="hero page">
-    <h1 class="hero__name">Jonah Cha</h1>
-    <p class="hero__lede">
-      I work on machine learning systems, and on the evaluation that tells you whether they
-      actually work. At UCSF I’m training diffusion transformers to reconstruct video from fMRI;
-      at Mercor I build post-training data and RL environments for AI agents; at Berkeley AI
-      Research I helped build CyberGym-E2E, an end-to-end benchmark for AI-generated security
-      patches, accepted to the ICLR Workshop on Agentic AI Security. Before that I spent two
-      summers shipping production software — a national tournament platform still running 50+
-      events a year, and a set of cloud agents that took a legal consultancy’s document review
-      off manual.
-    </p>
-    <p class="hero__meta u-nums">Berkeley, CA · B.S. EECS ’28 · GPA 4.00</p>
-    <ul class="hero__links">
-      <li><a class="link" href="mailto:jonah_cha@berkeley.edu">jonah_cha@berkeley.edu</a></li>
-      <li><a class="link" rel="me noopener noreferrer" target="_blank" href="https://github.com/MERC13">GitHub</a></li>
-      <li><a class="link" rel="me noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/jonah-cha-7610a12b8/">LinkedIn</a></li>
+<!-- ============================== HERO ============================== -->
+<section class="hero" aria-labelledby="name">
+  <canvas class="hero__field" aria-hidden="true"></canvas>
+  <div class="wrap hero__in">
+    <p class="hero__kicker mono">UC Berkeley EECS · expected May 2028</p>
+    <h1 class="hero__name" id="name">Jonah Cha</h1>
+    <p class="hero__focus">I build and stress-test ML systems: brain decoding, robot learning, AI agents.</p>
+
+    <ul class="stats" aria-label="At a glance">
+      <li class="stat"><span class="stat__n">ICML&nbsp;’26</span><span class="stat__l">co-author, CyberGym-E2E</span></li>
+      <li class="stat"><span class="stat__n" data-count="0.955" data-dp="3">0.955</span><span class="stat__l">held-out brain-to-image identification, UCSF</span></li>
+      <li class="stat"><span class="stat__n" data-count="6">6</span><span class="stat__l">research &amp; engineering roles since 2024</span></li>
+      <li class="stat"><span class="stat__n" data-count="4" data-dp="2">4.00</span><span class="stat__l">GPA in EECS</span></li>
     </ul>
-  </section>
 
-
-  <section id="experience" class="section page">
-    <h2 class="section__label">Experience</h2>
-
-    <!-- Timeline offsets are percentages of a May 2024 – Aug 2026 span (27 months).
-         For a new role: from = (monthsSinceMay2024 / 27) * 100. -->
-    <figure class="timeline">
-      <div class="timeline__chart" aria-hidden="true">
-        <div class="timeline__bandwrap">
-          <span class="timeline__band" style="--from:59.3%;--span:29.6%"></span>
-        </div>
-        <div class="timeline__row" data-kind="research">
-          <span class="timeline__name">UCSF</span>
-          <span class="timeline__track"><i class="timeline__bar timeline__bar--now" style="--from:74.1%;--span:25.9%"></i></span>
-        </div>
-        <div class="timeline__row" data-kind="engineering">
-          <span class="timeline__name">Mercor</span>
-          <span class="timeline__track"><i class="timeline__bar timeline__bar--now" style="--from:59.3%;--span:40.7%"></i></span>
-        </div>
-        <div class="timeline__row" data-kind="research">
-          <span class="timeline__name">Haas</span>
-          <span class="timeline__track"><i class="timeline__bar" style="--from:59.3%;--span:29.6%"></i></span>
-        </div>
-        <div class="timeline__row" data-kind="research">
-          <span class="timeline__name">BAIR</span>
-          <span class="timeline__track"><i class="timeline__bar" style="--from:59.3%;--span:11.1%"></i></span>
-        </div>
-        <div class="timeline__row" data-kind="engineering">
-          <span class="timeline__name">Stoa USA</span>
-          <span class="timeline__track"><i class="timeline__bar" style="--from:3.7%;--span:51.9%"></i></span>
-        </div>
-        <div class="timeline__row" data-kind="engineering">
-          <span class="timeline__name">Uplevel Ops</span>
-          <span class="timeline__track"><i class="timeline__bar" style="--from:0%;--span:55.6%"></i></span>
-        </div>
-        <div class="timeline__row">
-          <span></span>
-          <span class="timeline__ticks">
-            <i style="--from:0%">2024</i>
-            <i style="--from:29.6%">2025</i>
-            <i style="--from:74.1%">2026</i>
-          </span>
-        </div>
-      </div>
-      <figcaption class="timeline__cap u-nums">
-        Three concurrent roles, September 2025 – May 2026.
-      </figcaption>
-      <div class="timeline__legend" aria-hidden="true">
-        <span class="is-research"><i></i>Research</span>
-        <span class="is-eng"><i></i>Engineering</span>
-      </div>
-    </figure>
-
-    <article class="entry" data-kind="research">
-      <p class="entry__meta u-nums"><span>2026 —</span><span>Present</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">University of California, San Francisco</h3>
-        <p class="entry__role">Researcher</p>
-        <p class="entry__desc">
-          Designing diffusion transformer models that reconstruct video from fMRI recordings. My
-          work is on latent representation learning and the large-scale post-training loop, plus
-          the statistical evaluation and benchmarking that decides whether a reconstruction is
-          real or wishful. Currently above 90% accuracy, exceeding the published baselines we
-          benchmark against.
-        </p>
-        <p class="entry__tech">Python · PyTorch · HuggingFace</p>
-      </div>
-    </article>
-
-    <article class="entry" data-kind="engineering">
-      <p class="entry__meta u-nums"><span>2025 —</span><span>Present</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Mercor Intelligence</h3>
-        <p class="entry__role">Machine Learning Engineer</p>
-        <p class="entry__desc">
-          Post-training work for AI agents, with a focus on reinforcement learning. I build
-          training examples and the ML workflows around them, and design evaluations for agent
-          behaviour.
-        </p>
-        <p class="entry__tech">Python · PyTorch · scikit-learn · XGBoost</p>
-      </div>
-      <p class="entry__note">Projects are unreleased, so the details stop here.</p>
-    </article>
-
-    <article class="entry" data-kind="research">
-      <p class="entry__meta u-nums"><span>2025 —</span><span>2026</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Haas School of Business</h3>
-        <p class="entry__role">Researcher</p>
-        <p class="entry__desc">
-          Developing and testing recommendation models inside behavioural-economics games, and
-          formalising reinforcement learning algorithms that optimise for long-term human
-          learning on deliberately scarce datasets.
-        </p>
-        <p class="entry__tech">Python · JavaScript</p>
-      </div>
-    </article>
-
-    <article class="entry" data-kind="research">
-      <p class="entry__meta u-nums"><span>2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Berkeley Artificial Intelligence Research (BAIR)</h3>
-        <p class="entry__role">Researcher</p>
-        <p class="entry__desc">
-          Built <strong>CyberGym-E2E</strong>, an end-to-end benchmark for evaluating whether AI
-          agents can write correct security patches for real open-source codebases. I built the
-          processing pipeline that ingested ~5 million lines of C/C++ into reproducible
-          patch-evaluation tasks. Accepted to the ICLR Workshop on Agentic AI Security, and used
-          by external research teams including Anthropic.
-        </p>
-        <p class="entry__tech">Python · Docker · Linux · HuggingFace · C/C++</p>
-      </div>
-    </article>
-
-    <article class="entry" data-kind="engineering">
-      <p class="entry__meta u-nums"><span>2024 —</span><span>2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Stoa USA</h3>
-        <p class="entry__role">Software Engineering Intern</p>
-        <p class="entry__desc">
-          Architected the national web platform for the Stoa speech and debate league — 100,000+
-          user entries — including a rankings page that automatically scrapes and tabulates
-          results across the 50+ tournaments held each year. Still in production.
-        </p>
-        <p class="entry__tech">PHP · Laravel · Node.js · MySQL · Git</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://stoahub.org/">stoahub.org</a>
-        </p>
-      </div>
-    </article>
-
-    <article class="entry" data-kind="engineering">
-      <p class="entry__meta u-nums"><span>2024 —</span><span>2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Uplevel Ops Legal Consulting</h3>
-        <p class="entry__role">AI Consultant</p>
-        <p class="entry__desc">
-          Built and shipped a suite of cloud AI agents for a legal consultancy’s Fortune 500
-          clients, including Adobe and Sony: NDA drafting from a firm’s own clause library,
-          contract redlining against a client playbook, invoice review against billing
-          guidelines, timesheet generation from calendar and email, consolidated-screening-list
-          search, template harmonisation, and deck generation. Review times dropped by more than
-          half, and Uplevel estimated the automation delivered over $2 million in client value.
-        </p>
-        <p class="entry__tech">Python · Docker · AWS · Azure · Pinecone · LLM APIs</p>
-      </div>
-      <p class="entry__note">Code is client-owned — nothing to link. Happy to walk through the architecture.</p>
-    </article>
-  </section>
-
-
-  <section id="work" class="section page">
-    <h2 class="section__label">Selected work</h2>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Jul 2026</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Counterfactual Action Editing with a World Model</h3>
-        <p class="entry__desc">
-          Can a learned world model tell you <em>which action</em> made a robot fail? I trained an
-          action-conditioned latent dynamics model — a transformer over DINOv2 features — on
-          LIBERO manipulation rollouts, then used CEM to search for the minimal action edit that
-          would have rescued a failed episode, replaying every candidate in MuJoCo to check it for
-          real rather than trusting the model’s own prediction. The model does localise faults:
-          AUROC 0.88–0.92 for flagging the failure window, and the learned critic ranks candidate
-          edits above chance (0.62–0.71). But across eight configurations, nothing beat random
-          edits unless it was handed the oracle fault window. It is published as a negative result
-          with the full ablation table, because the gap between “has signal” and “is useful” is
-          the entire finding.
-        </p>
-        <p class="entry__tech">Python · PyTorch · JAX · MuJoCo · LIBERO</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/failure-detection-WM">Code</a>
-        </p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Jun 2026</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">RL over a Frozen VLA’s Steering Interface</h3>
-        <p class="entry__desc">
-          Fine-tuning a vision-language-action policy is expensive; steering one through its
-          natural-language interface is not. I froze π0.5 and trained a clipped-PPO actor-critic
-          with GAE over a categorical policy whose action space is a menu of per-task
-          instructions — so the RL problem becomes “what should I tell the robot next,” not “what
-          torques should it apply.” Most of the real work was infrastructure: a Modal-based
-          rollout cluster with a hardware-aware local/cloud split, WebSocket serving for the
-          frozen policy, and a unit-tested audit pipeline so every number in the results table
-          traces back to the rollout that produced it.
-        </p>
-        <p class="entry__tech">Python · PyTorch · JAX · openpi / π0.5 · MuJoCo · Modal</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/openpi">Code</a>
-        </p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Jun 2026</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Lecture Assistant</h3>
-        <p class="entry__desc">
-          Lecture audio streams in over WebSockets, goes to Deepgram for transcription, and lands
-          in Redis Stack, which doubles as the low-latency vector store. An asyncio FastAPI
-          orchestrator then runs Claude-backed agents that generate comprehension questions
-          against the last few minutes of material while the lecture is still happening. Every
-          stage is instrumented with OpenTelemetry into Arize AX, so when a question comes out
-          wrong you can see which retrieval and which prompt produced it. The binding constraint
-          was end-to-end latency — a question that arrives after the professor has moved on is
-          worthless.
-        </p>
-        <p class="entry__tech">FastAPI · Redis Stack · Deepgram · Claude · Arize AX · Docker</p>
-      </div>
-      <p class="entry__note">With Ben Hung and Lucas Zheng. No public repo yet.</p>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Nov 2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Fantasy Football Browser Extension</h3>
-        <p class="entry__desc">
-          A temporal transformer that forecasts NFL player outcomes week by week, wrapped in the
-          smallest product that could use it. Weekly histories run through a mixed
-          numeric/categorical pipeline with per-feature learned embeddings, tuned with Optuna over
-          <code>nfl_data_py</code> play-by-play data; position-specific models for QB, RB, WR and
-          TE sit behind a Flask API that a Manifest V3 extension calls to overlay projections
-          directly on top of the numbers ESPN and Yahoo are already showing you. On the weeks I
-          backtested, it beat both platforms’ published projections.
-        </p>
-        <p class="entry__tech">PyTorch · rtdl · Optuna · nfl_data_py · Flask · JavaScript</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/fantasy-football-extension">Code</a>
-        </p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Sep 2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Automated Research Digest</h3>
-        <p class="entry__desc">
-          A weekly literature digest that runs itself. A containerised pipeline scrapes new
-          preprints, parses PDFs with PyMuPDF, chunks and embeds them into Pinecone, retrieves
-          against my interests, summarises with a local Ollama model, and emails the result
-          through SendGrid. It runs as an ECS task on an EventBridge schedule, with logs in
-          CloudWatch and images in ECR — no server to babysit and nothing running when it is idle.
-          It has indexed on the order of 100,000 papers.
-        </p>
-        <p class="entry__tech">PyMuPDF · Pinecone · Ollama · Docker · AWS ECS · SendGrid</p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Jul 2026</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Medical Diagnoses with Deep Learning</h3>
-        <p class="entry__desc">
-          Two halves of one question: how far does transfer learning get you on a small,
-          imbalanced medical dataset, and can you generate your way out of the imbalance? I
-          fine-tuned VGG16 for binary pneumonia detection on the Kaggle chest X-ray set, applying
-          class weighting to handle the skew, and reached 96% test accuracy. The second half is a
-          DCGAN generator and discriminator trained on CIFAR-10 to synthesise images for dataset
-          augmentation.
-        </p>
-        <p class="entry__tech">Python · Keras / TensorFlow · PyTorch</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/CNN-xray">X-ray CNN</a>
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/gan-test">DCGAN</a>
-        </p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Nov 2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Deep Q-Network for Atari, from Scratch</h3>
-        <p class="entry__desc">
-          DeepMind’s 2015 Nature DQN, reimplemented without an RL library. Experience replay, an
-          ε-greedy exploration schedule, a target network, and Bellman TD-error updates with
-          gradient clipping — all written by hand against raw frames from the Arcade Learning
-          Environment. Building the machinery yourself is the point: the paper’s hyperparameters
-          stop looking arbitrary once you have watched training collapse without each one.
-        </p>
-        <p class="entry__tech">PyTorch · Gymnasium · ALE · NumPy · OpenCV</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/RL-atari">Code</a>
-        </p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>Nov 2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">Stock Forecasting Platform</h3>
-        <p class="entry__desc">
-          An LSTM trained on Yahoo Finance history with engineered technical indicators, served
-          behind a Flask app that returns on-demand forecasts and renders customisable
-          visualisations. I built it to find where sequence models stop helping on financial
-          series. They stop early — which is a more useful thing to have learned firsthand than
-          another backtest that looks good in-sample.
-        </p>
-        <p class="entry__tech">TensorFlow / Keras · scikit-learn · yfinance · Flask</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/stock-website">Code</a>
-        </p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>2024 — 2025</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">StoaHub</h3>
-        <p class="entry__desc">
-          The national platform for the Stoa speech and debate league, built during my internship
-          at Stoa USA. Laravel and MySQL behind 100,000+ user entries, tournament registration and
-          calendaring, club listings, and a rankings page that scrapes and tabulates results
-          across the 50+ tournaments held each year. Still in production, and still running the
-          league.
-        </p>
-        <p class="entry__tech">PHP · Laravel · JavaScript · MySQL</p>
-        <p class="entry__links">
-          <a class="link" target="_blank" rel="noopener noreferrer" href="https://stoahub.org/">Live site</a>
-        </p>
-      </div>
-    </article>
-  </section>
-
-
-  <section id="also" class="section section--tinted page">
-    <h2 class="section__label">Also built</h2>
-    <p class="section__note">Smaller experiments and coursework. Code only, no write-ups.</p>
-
-    <ul class="archive">
-      <li class="archive__item">
-        <span class="archive__title">Mechanistic interpretability</span>
-        <span class="archive__desc">DPO fine-tuning and TransformerLens circuit analysis.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/mechanistic-interpretability">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">LLM agent pipelines</span>
-        <span class="archive__desc">LangChain, LangGraph and AutoGen workflows, including a PDF research assistant.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/Agents">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Interlinked — LLM SFT + RL</span>
-        <span class="archive__desc">Supervised fine-tuning and reinforcement learning on a language model.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Interlinked-LLM-SFT-RL">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">GPT-2 from scratch</span>
-        <span class="archive__desc">Transformer implementation and training experiments.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/GPT2">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">LLM training experiments</span>
-        <span class="archive__desc">Fine-tuning and training runs on open language models.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/learning-LLM">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Spiking neural networks</span>
-        <span class="archive__desc">Experiments with spike-based network architectures.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/SNN">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">CartPole Q-learning</span>
-        <span class="archive__desc">Tabular Q-learning on CartPole-v1 through Gym.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/gym-test">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Rankings predictor</span>
-        <span class="archive__desc">Keras model predicting team win counts from tournament pairings.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/Deep-learning/tree/main/rankings-predictor">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Romance narrative analysis, 1975–2025</span>
-        <span class="archive__desc">Destiny-versus-growth language across fifty years of screenplays, with NLTK.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/r4b-original-research">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Bank marketing classifier</span>
-        <span class="archive__desc">Comparison of several classifiers and pipelines on term-deposit data.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/sci-kit-models/tree/main/banking%20example">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">K-Means clustering</span>
-        <span class="archive__desc">Breast Cancer and Palmer Penguins datasets.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/sci-kit-models/tree/main/K-Means-Clustering">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">K-Nearest Neighbours — Wine</span>
-        <span class="archive__desc">KNN classification on the Wine dataset.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/sci-kit-models/tree/main/KNN">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Naive Bayes — 20 Newsgroups</span>
-        <span class="archive__desc">Text classification with TF–IDF and multinomial Naive Bayes.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/sci-kit-models/tree/main/Naive-Bayes">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Random Forest — Titanic</span>
-        <span class="archive__desc">Survival prediction with a random forest.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/sci-kit-models/tree/main/Random-Forest">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Logistic regression — UFO sightings</span>
-        <span class="archive__desc">Trained model served through a small Flask app.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/sci-kit-models/tree/main/Regression/ufos">Code</a></span>
-      </li>
-      <li class="archive__item">
-        <span class="archive__title">Cuisine recommender — linear SVM</span>
-        <span class="archive__desc">Linear SVM trained on cuisine data, exported to ONNX.</span>
-        <span class="archive__link"><a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/sci-kit-models/tree/main/SVM/cuisinerecommender">Code</a></span>
-      </li>
-    </ul>
-  </section>
-
-
-  <section id="about" class="section page">
-    <h2 class="section__label">Education</h2>
-
-    <article class="entry">
-      <p class="entry__meta u-nums"><span>2024 —</span><span>2028</span></p>
-      <div class="entry__body">
-        <h3 class="entry__title">University of California, Berkeley</h3>
-        <p class="entry__role">B.S. Electrical Engineering and Computer Science · GPA 4.00</p>
-        <p class="entry__desc">
-          Coursework: Computer Programs (A), Data Structures (A+), Discrete Mathematics and
-          Probability Theory (A), Machine Learning (A+), Computer Vision (in progress), Computer
-          Architecture (in progress).
-        </p>
-      </div>
-      <p class="entry__note">Deep Learning and Reinforcement Learning audited.</p>
-    </article>
-
-    <h2 class="section__label section__label--sub">Skills</h2>
-    <dl class="skills">
-      <div class="skills__row">
-        <dt>Languages</dt>
-        <dd>Python · C++ · Java · PHP · JavaScript · SQL · HTML/CSS</dd>
-      </div>
-      <div class="skills__row">
-        <dt>Tools</dt>
-        <dd>PyTorch · JAX · Docker · AWS · Linux · Git · Redis · Pinecone · Laravel</dd>
-      </div>
-      <div class="skills__row">
-        <dt>Agents</dt>
-        <dd>LangChain / LangGraph / LangSmith · AutoGen · MCP · Claude</dd>
-      </div>
-    </dl>
-
-    <h2 class="section__label section__label--sub">Awards</h2>
-    <p class="awards u-nums">
-      SAT 1600/1600 · PSAT 1520/1520 · AP Scholar with Distinction ·
-      2× National Gold Medal Debater · Presidential Scholar Candidate
+    <p class="hero__acts">
+      <a class="btn btn--primary" href="assets/jonah-cha-resume.pdf">Resume (PDF)</a>
+      <span class="mail">
+        <a class="btn" href="mailto:jonah_cha@berkeley.edu">jonah_cha@berkeley.edu</a>
+        <button class="btn btn--icon copy" type="button" aria-label="Copy email address" data-copy="jonah_cha@berkeley.edu" data-ok="Email address copied" data-fail="Copy failed; the address is jonah_cha@berkeley.edu">
+          <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false"><rect x="6.75" y="6.75" width="9.5" height="9.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.75 13.25v-8.5a1 1 0 0 1 1-1h8.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+      </span>
+      <a class="btn btn--ghost" href="https://github.com/MERC13">GitHub</a>
+      <a class="btn btn--ghost" href="https://www.linkedin.com/in/jonah-cha-7610a12b8/">LinkedIn</a>
+      <a class="btn btn--ghost" href="https://openreview.net/profile?id=~Jonah_Cha1">OpenReview</a>
     </p>
-  </section>
+    <!-- slot: availability. One line under the buttons, e.g. what you're looking for and when:
+    <p class="hero__avail"><i></i>[your line]</p>
+    -->
+    <p class="hero__hint mono" aria-hidden="true">Move your cursor over the grid: each square is a voxel, and it answers the way a BOLD signal does, a few seconds late.</p>
+  </div>
+</section>
+
+<!-- ============================== EXPERIENCE ============================== -->
+<section class="sec" id="experience" aria-labelledby="exp-h">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="sec__num mono">01</p>
+      <h2 class="sec__h" id="exp-h">Experience</h2>
+    </header>
+
+    <!-- Timeline: bar positions are months from May 2024 (0) to Oct 2026 (29); "now" is 30. -->
+    <div class="tl" style="--total:30">
+      <ul class="tl__rows" aria-label="Roles by month, May 2024 to October 2026">
+        <li><a class="tl__row" href="#exp-ucsf" data-kind="r" style="--s:20;--to:30"><span class="tl__lab">UCSF</span><span class="tl__track" aria-hidden="true"><i class="tl__bar"></i></span><span class="u-vh">, January 2026 to now</span></a></li>
+        <li><a class="tl__row" href="#exp-ucb" data-kind="r" style="--s:27;--to:30"><span class="tl__lab">UC Berkeley</span><span class="tl__track" aria-hidden="true"><i class="tl__bar"></i></span><span class="u-vh">, August 2026 to now</span></a></li>
+        <li><a class="tl__row" href="#exp-mercor" data-kind="e" style="--s:16;--to:28"><span class="tl__lab">Mercor</span><span class="tl__track" aria-hidden="true"><i class="tl__bar"></i></span><span class="u-vh">, September 2025 to August 2026</span></a></li>
+        <li><a class="tl__row" href="#exp-bair" data-kind="r" style="--s:16;--to:20"><span class="tl__lab">BAIR</span><span class="tl__track" aria-hidden="true"><i class="tl__bar"></i></span><span class="u-vh">, September to December 2025</span></a></li>
+        <li><a class="tl__row" href="#exp-stoa" data-kind="e" style="--s:1;--to:16"><span class="tl__lab">Stoa USA</span><span class="tl__track" aria-hidden="true"><i class="tl__bar"></i></span><span class="u-vh">, June 2024 to August 2025</span></a></li>
+        <li><a class="tl__row" href="#exp-uplevel" data-kind="e" style="--s:0;--to:16"><span class="tl__lab">Uplevel Ops</span><span class="tl__track" aria-hidden="true"><i class="tl__bar"></i></span><span class="u-vh">, May 2024 to August 2025</span></a></li>
+      </ul>
+      <div class="tl__axis" aria-hidden="true"><span></span><span class="tl__ticks"><i style="--m:0">May 2024</i><i style="--m:8">2025</i><i style="--m:20">2026</i><i class="tl__now" style="--m:29.5">now</i></span></div>
+      <p class="tl__key mono" aria-hidden="true"><span><i class="dot dot--r"></i>research</span><span><i class="dot dot--e"></i>engineering</span></p>
+    </div>
+
+    <ol class="xp">
+
+      <!-- UCSF -->
+      <li class="role" id="exp-ucsf" data-kind="r">
+        <div class="role__meta">
+          <p class="role__when mono">Jan 2026 – now</p>
+          <h3 class="role__org">UCSF</h3>
+          <p class="role__title">Researcher · two projects</p>
+        </div>
+        <div class="role__body">
+          <p class="role__line"><strong>Brain decoding.</strong> Reconstructing what a person saw from their fMRI: a small fMRI→CLIP map drives frozen diffusion generators, across four public datasets of images, short clips and full movies.</p>
+          <p class="role__line role__line--muted"><strong>Clinical radiology.</strong> Deep learning and quantitative imaging for early detection and risk stratification. <span class="tag">in progress</span></p>
+
+          <figure class="demo" id="demo-neuro" data-demo="neuro">
+            <figcaption class="demo__bar">
+              <span class="demo__lab mono">results</span>
+              <span class="demo__t">What the brain decoder gets right, and where it stops</span>
+            </figcaption>
+            <div class="seg" role="tablist" aria-label="Brain decoding views">
+              <button role="tab" type="button" data-view="headline" aria-selected="true">Headline</button>
+              <button role="tab" type="button" data-view="foils">Harder foils</button>
+              <button role="tab" type="button" data-view="gran">What it carries</button>
+              <button role="tab" type="button" data-view="pool">Pooling</button>
+              <button role="tab" type="button" data-view="data">Data quality</button>
+            </div>
+            <div class="demo__stage" data-stage>
+              <!-- Static fallback; the script replaces it. -->
+              <ul class="tiles">
+                <li><b>0.955</b><span>held-out 2-way identification, all 8 NSD subjects (chance 0.50)</span></li>
+                <li><b>155×</b><span>chance: top-1 retrieval among 897 unseen images</span></li>
+                <li><b>~0 → +0.19</b><span>per-stimulus reliability after a one-line preprocessing fix</span></li>
+              </ul>
+            </div>
+            <p class="demo__note" data-note>Every number is on held-out images the model never saw.</p>
+            <!-- slot: reconstructions. Add the gallery from the project's figures/ folder
+                 (unified_gallery.jpg: true stimulus | reconstruction from fMRI | oracle) as
+                 assets/img/neuro-gallery.jpg and uncomment:
+            <img class="demo__img" src="assets/img/neuro-gallery.jpg" alt="Held-out images next to their reconstructions from fMRI" loading="lazy">
+            -->
+          </figure>
+        </div>
+      </li>
+
+      <!-- UC Berkeley -->
+      <li class="role role--compact" id="exp-ucb" data-kind="r">
+        <div class="role__meta">
+          <p class="role__when mono">Aug 2026 – now</p>
+          <h3 class="role__org">UC Berkeley</h3>
+          <p class="role__title">Researcher</p>
+        </div>
+        <div class="role__body">
+          <p class="role__line">Foundation models for RNA: new transformer architectures and representation-learning objectives for sequence-to-structure prediction, with compute optimisation on AWS Trainium. <span class="tag">in progress</span></p>
+        </div>
+      </li>
+
+      <!-- Mercor -->
+      <li class="role role--compact" id="exp-mercor" data-kind="e">
+        <div class="role__meta">
+          <p class="role__when mono">Sep 2025 – Aug 2026</p>
+          <h3 class="role__org">Mercor</h3>
+          <p class="role__title">Machine Learning Engineer</p>
+        </div>
+        <div class="role__body">
+          <p class="role__line">Post-training for AI agents on stealth projects: reinforcement learning for agents, training data, and evaluations of agent behaviour. <span class="tag">under NDA</span></p>
+        </div>
+      </li>
+
+      <!-- BAIR -->
+      <li class="role" id="exp-bair" data-kind="r">
+        <div class="role__meta">
+          <p class="role__when mono">Sep – Dec 2025</p>
+          <h3 class="role__org">Berkeley AI Research</h3>
+          <p class="role__title">Researcher · Dawn Song’s group</p>
+        </div>
+        <div class="role__body">
+          <p class="role__line">Co-authored <strong>CyberGym-E2E</strong>, a benchmark that asks whether an AI agent can find a real vulnerability, prove it, and patch it.</p>
+
+          <article class="paper" id="pub" aria-labelledby="pub-t">
+            <p class="paper__venue mono">ICML 2026 · PMLR 306</p>
+            <h4 class="paper__t" id="pub-t">CyberGym-E2E: Scalable Real-World Benchmark for AI Agents’ End-to-End Cybersecurity Capabilities</h4>
+            <div class="paper__nums">
+              <p><b data-count="920">920</b><span>real-world vulnerabilities</span></p>
+              <p><b data-count="139">139</b><span>open-source C/C++ projects</span></p>
+              <p><b>3</b><span>stages: discover → prove → patch</span></p>
+            </div>
+            <div class="authors">
+              <span class="authors__strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="me"></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="authors__l mono">author 10 of 16</span>
+            </div>
+            <ul class="links">
+              <li><a href="https://arxiv.org/abs/2606.04460">arXiv</a></li>
+              <li><a href="https://proceedings.mlr.press/v306/shi26r.html">PMLR</a></li>
+              <li><a href="https://github.com/sunblaze-ucb/cybergym-e2e">Code</a></li>
+              <li><a href="https://huggingface.co/datasets/sunblaze-ucb/cybergym-e2e">Dataset</a></li>
+              <li><a href="https://www.cybergym.io/cybergym-e2e/">Project page</a></li>
+              <li><button class="linkbtn copy" type="button" data-copy-from="bib" data-ok="BibTeX copied" data-fail="Copy failed">Copy BibTeX</button></li>
+            </ul>
+            <pre class="u-vh" id="bib">@InProceedings{pmlr-v306-shi26r,
+  title = {{C}yber{G}ym-{E}2{E}: Scalable Real-World Benchmark for {AI} Agents’ End-to-End Cybersecurity Capabilities},
+  author = {Shi, Tianneng and Rheem, Robin and Jiang, Dongwei and Wang, Mona and De La Riega, Francisco and Wang, Zhun and Jiang, Jingzhi and Cheung, Alexander and Tai, Sean and Cha, Jonah and Tu, Jianhong and Han, Gabriel and Wang, Chenguang and He, Jingxuan and Guo, Wenbo and Song, Dawn},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  pages = {112094--112108},
+  year = {2026},
+  volume = {306},
+  series = {Proceedings of Machine Learning Research},
+  publisher = {PMLR},
+  url = {https://proceedings.mlr.press/v306/shi26r.html}
+}</pre>
+          </article>
+        </div>
+      </li>
+
+      <!-- Stoa -->
+      <li class="role" id="exp-stoa" data-kind="e">
+        <div class="role__meta">
+          <p class="role__when mono">Jun 2024 – Aug 2025</p>
+          <h3 class="role__org">Stoa USA</h3>
+          <p class="role__title">Software Engineering Intern</p>
+        </div>
+        <div class="role__body">
+          <p class="role__line">Built <strong>StoaHub</strong>, the national web platform of the Stoa speech and debate league, including the rankings that tabulate results across its tournaments.</p>
+          <a class="site" href="https://stoahub.org/">
+            <span class="site__chrome" aria-hidden="true"><i></i><i></i><i></i><span class="site__url mono">stoahub.org</span></span>
+            <span class="site__body">
+              <span class="site__nums">
+                <span><b data-count="100000" data-plus>100,000+</b><em>user entries</em></span>
+                <span><b data-count="50" data-plus>50+</b><em>tournaments a year</em></span>
+              </span>
+              <span class="site__go">Open the live site <span aria-hidden="true">→</span></span>
+            </span>
+          </a>
+        </div>
+      </li>
+
+      <!-- Uplevel -->
+      <li class="role" id="exp-uplevel" data-kind="e">
+        <div class="role__meta">
+          <p class="role__when mono">May 2024 – Aug 2025</p>
+          <h3 class="role__org">Uplevel Ops</h3>
+          <p class="role__title">AI Consultant</p>
+        </div>
+        <div class="role__body">
+          <p class="role__line">Cloud AI agents for a legal consultancy’s clients: NDA drafting, contract redlining, and invoice review against billing guidelines. Uplevel estimated <strong>over $2&nbsp;million</strong> in client value.</p>
+
+          <figure class="demo" id="demo-pipe" data-demo="pipe">
+            <figcaption class="demo__bar">
+              <span class="demo__lab mono">diagram</span>
+              <span class="demo__t">Invoice review: a 100-page PDF in, a reviewed invoice back in under a minute</span>
+            </figcaption>
+            <div class="ctrl">
+              <button class="run" type="button" data-run><span class="run__i" aria-hidden="true"></span><span data-run-l>Send an invoice through</span></button>
+              <span class="ctrl__read mono" data-read aria-hidden="true">idle</span>
+            </div>
+            <ol class="pipe" data-pipe>
+              <li><span class="pipe__k mono">user</span><b>Chat interface</b><span class="pipe__d">A reviewer drops in a 100-page invoice PDF.</span></li>
+              <li><span class="pipe__k mono">aws</span><b>API Gateway</b><span class="pipe__d">Receives the upload and hands it to the backend.</span></li>
+              <li><span class="pipe__k mono">aws</span><b>Lambda</b><span class="pipe__d">Parses the PDF into line items.</span></li>
+              <li><span class="pipe__k mono">aws</span><b>Events</b><span class="pipe__d">Events trigger each processing stage.</span></li>
+              <li><span class="pipe__k mono">aws</span><b>S3</b><span class="pipe__d">Stores the document and intermediate results.</span></li>
+              <li><span class="pipe__k mono">rag</span><b>Pinecone</b><span class="pipe__d">Retrieves the billing guidelines that apply.</span></li>
+              <li><span class="pipe__k mono">llm</span><b>Engineered prompt</b><span class="pipe__d">A strict review prompt checks items against the guidelines.</span></li>
+              <li><span class="pipe__k mono">user</span><b>Reviewed invoice</b><span class="pipe__d">Flagged items and reasons, back in the chat.</span></li>
+            </ol>
+            <p class="demo__note">A redrawing of the architecture, not the product: the code is client-owned.</p>
+          </figure>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== EDUCATION ============================== -->
+<section class="sec" id="education" aria-labelledby="edu-h">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="sec__num mono">02</p>
+      <h2 class="sec__h" id="edu-h">Education</h2>
+    </header>
+    <div class="edu">
+      <div class="edu__card">
+        <p class="edu__when mono">Expected May 2028</p>
+        <h3 class="edu__school">University of California, Berkeley</h3>
+        <p class="edu__deg">B.S. Electrical Engineering &amp; Computer Science</p>
+        <p class="gpa"><span class="gpa__n" data-count="4" data-dp="2">4.00</span><span class="gpa__l mono">GPA</span></p>
+      </div>
+      <ul class="courses" aria-label="Coursework">
+        <li><span>Machine Learning</span><b class="g g--a">A+</b></li>
+        <li><span>Data Structures</span><b class="g g--a">A+</b></li>
+        <li><span>Structure &amp; Interpretation of Computer Programs</span><b class="g g--a">A</b></li>
+        <li><span>Discrete Math &amp; Probability</span><b class="g g--a">A</b></li>
+        <li><span>Deep Learning</span><b class="g">auditing</b></li>
+        <li><span>Reinforcement Learning</span><b class="g">audited</b></li>
+        <li><span>Computer Vision</span><b class="g">now</b></li>
+        <li><span>Computer Architecture</span><b class="g">now</b></li>
+      </ul>
+      <div class="edu__aside">
+        <h3 class="mini-h mono">Awards</h3>
+        <ul class="awards">
+          <li><b>1600</b> SAT</li>
+          <li><b>2×</b> National Gold Medal debater</li>
+          <li>AP Scholar with Distinction</li>
+          <li>Presidential Scholar candidate</li>
+        </ul>
+        <h3 class="mini-h mono">Tools</h3>
+        <p class="tools">Python · C++ · Java · JavaScript · SQL · PyTorch · JAX · HuggingFace · AWS (Lambda, S3, Trainium) · Docker · Redis · Pinecone · LangGraph · MCP</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROJECTS ============================== -->
+<section class="sec" id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <header class="sec__head">
+      <p class="sec__num mono">03</p>
+      <h2 class="sec__h" id="proj-h">Projects</h2>
+      <p class="sec__sub">All public on GitHub. The charts are drawn from each repo’s own result files.</p>
+    </header>
+
+    <div class="projects">
+
+      <!-- failure-detection-WM -->
+      <article class="proj proj--wide" id="proj-wm" aria-labelledby="wm-t">
+        <header class="proj__head">
+          <p class="proj__when mono">2026 · robot learning · <span class="neg">negative result</span></p>
+          <h3 class="proj__t" id="wm-t">Finding a robot’s mistake isn’t fixing it</h3>
+          <p class="proj__line">A probe on frozen encoder features pinpoints when a robot policy is failing (AUROC <b>0.88–0.92</b>). But no search a deployed robot could run repaired the failure better than a random edit of the same size.</p>
+        </header>
+        <figure class="demo" data-demo="forest">
+          <figcaption class="demo__bar">
+            <span class="demo__lab mono">data</span>
+            <span class="demo__t">Searched repair minus random repair: success rate, 95% CI</span>
+          </figcaption>
+          <div class="seg" role="tablist" aria-label="Which setups">
+            <button role="tab" type="button" data-view="deployable" aria-selected="true">Deployable</button>
+            <button role="tab" type="button" data-view="all">+ oracle fault window</button>
+          </div>
+          <div class="demo__stage" data-stage><p class="demo__fallback">Across eight deployable setups, every 95% interval includes zero. Only with the ground-truth fault window, which a deployed robot doesn’t have, did a search beat random (+0.25 and +0.27).</p></div>
+          <p class="demo__note" data-note>Hover or tab through a row for its setup.</p>
+        </figure>
+        <ul class="links">
+          <li><a href="https://github.com/MERC13/failure-detection-WM">Code &amp; full log</a></li>
+        </ul>
+      </article>
+
+      <!-- steering -->
+      <article class="proj proj--wide" id="proj-steer" aria-labelledby="st-t">
+        <header class="proj__head">
+          <p class="proj__when mono">2026 · robot learning · audit</p>
+          <h3 class="proj__t" id="st-t">Can you steer a robot by rewording its instruction?</h3>
+          <p class="proj__line"><b>644</b> simulated episodes of a frozen π0.5 policy on 8 LIBERO tasks with 74 prompts. Rephrasing barely moves success, a misleading prompt can sink it, and only 2 of 8 tasks had headroom above the original instruction.</p>
+        </header>
+        <figure class="demo" data-demo="steer">
+          <figcaption class="demo__bar">
+            <span class="demo__lab mono">data</span>
+            <span class="demo__t">One square per episode; filled means the task succeeded</span>
+          </figcaption>
+          <div class="seg seg--wrap" role="tablist" aria-label="Task" data-tasks></div>
+          <div class="demo__stage" data-stage><p class="demo__fallback">Pick a task to see every prompt and its episodes.</p></div>
+          <p class="demo__key mono" aria-hidden="true"><span><i class="c c--C"></i>original</span><span><i class="c c--P"></i>paraphrase</span><span><i class="c c--S"></i>sub-goals</span><span><i class="c c--M"></i>misleading</span></p>
+        </figure>
+        <ul class="links">
+          <li><a href="https://github.com/MERC13/openpi/tree/steering-rl/steering_rl">Code &amp; results</a></li>
+        </ul>
+      </article>
+
+      <!-- AttentionRetention -->
+      <article class="proj proj--wide" id="proj-ar" aria-labelledby="ar-t">
+        <header class="proj__head">
+          <p class="proj__when mono">Jun 2026 · agents · with Ben Hung and Lucas Zheng</p>
+          <h3 class="proj__t" id="ar-t">AttentionRetention</h3>
+          <p class="proj__line">Listens to a live lecture, notices when a topic wraps up, and quizzes the student before their attention drifts. Deepgram speech-to-text, Redis memory, three Claude agents, every call traced in Arize.</p>
+        </header>
+        <figure class="demo" data-demo="lecture">
+          <figcaption class="demo__bar">
+            <span class="demo__lab mono">replay</span>
+            <span class="demo__t">The agent loop on a sample lecture</span>
+          </figcaption>
+          <div class="ctrl">
+            <button class="run" type="button" data-run><span class="run__i" aria-hidden="true"></span><span data-run-l>Play the lecture</span></button>
+          </div>
+          <div class="lec">
+            <div class="lec__screen">
+              <p class="lec__live mono"><i></i>live transcript</p>
+              <ol class="lec__tx" data-tx></ol>
+              <div class="lec__q" data-q hidden></div>
+            </div>
+            <ol class="lec__agents" data-agents>
+              <li><b>Deepgram</b><span>speech → text</span></li>
+              <li><b>Redis</b><span>transcript log</span></li>
+              <li><b>Notification agent</b><span>has the topic ended?</span></li>
+              <li><b>Retriever agent</b><span>pick a question</span></li>
+              <li><b>Questioning agent</b><span>grade the answer</span></li>
+              <li><b>Arize</b><span>trace every call</span></li>
+            </ol>
+          </div>
+          <p class="demo__note">A scripted replay with a sample transcript; the real tool runs on live audio.</p>
+        </figure>
+        <ul class="links">
+          <li><a href="https://github.com/20ben/attentionretention">Code</a></li>
+        </ul>
+      </article>
+
+      <!-- Deep-learning -->
+      <article class="proj" id="proj-dl" aria-labelledby="dl-t">
+        <header class="proj__head">
+          <p class="proj__when mono">2025 · deep learning</p>
+          <h3 class="proj__t" id="dl-t">Deep-learning builds</h3>
+          <p class="proj__line">Written from scratch: a nanoGPT-style GPT-2 with DDP and a HellaSwag eval, a hand-written DQN, LoRA fine-tuning, a DCGAN, and forecasting models.</p>
+        </header>
+        <figure class="demo" data-demo="dl">
+          <figcaption class="demo__bar">
+            <span class="demo__lab mono">results</span>
+            <span class="demo__t" data-dl-title>Fantasy football: test error by position</span>
+          </figcaption>
+          <div class="seg" role="tablist" aria-label="Deep-learning results">
+            <button role="tab" type="button" data-view="ff" aria-selected="true">Fantasy football</button>
+            <button role="tab" type="button" data-view="gan">DCGAN</button>
+          </div>
+          <div class="demo__stage" data-stage>
+            <table class="dt">
+              <caption class="u-vh">Weekly PPR points, season-based test split</caption>
+              <thead><tr><th scope="col">Position</th><th scope="col">MAE</th><th scope="col">RMSE</th><th scope="col">R²</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">QB</th><td>6.20</td><td>7.85</td><td>0.282</td></tr>
+                <tr><th scope="row">RB</th><td>4.16</td><td>5.80</td><td>0.434</td></tr>
+                <tr><th scope="row">WR</th><td>4.42</td><td>6.24</td><td>0.364</td></tr>
+                <tr><th scope="row">TE</th><td>3.82</td><td>5.18</td><td>0.280</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+        <ul class="links links--dense">
+          <li><a href="https://github.com/MERC13/Deep-learning/tree/main/fantasy-football-extension">Fantasy football</a></li>
+          <li><a href="https://github.com/MERC13/Deep-learning/tree/main/GPT2">GPT-2</a></li>
+          <li><a href="https://github.com/MERC13/Deep-learning/tree/main/RL-atari">Atari DQN</a></li>
+          <li><a href="https://github.com/MERC13/Deep-learning/tree/main/learning-LLM">LoRA</a></li>
+          <li><a href="https://github.com/MERC13/Deep-learning/tree/main/gan-test">DCGAN</a></li>
+          <li><a href="https://github.com/MERC13/Deep-learning/tree/main/Agents">Agents</a></li>
+          <li><a href="https://github.com/MERC13/Deep-learning">All</a></li>
+        </ul>
+      </article>
+
+      <!-- sci-kit-models -->
+      <article class="proj" id="proj-sk" aria-labelledby="sk-t">
+        <header class="proj__head">
+          <p class="proj__when mono">classical ML</p>
+          <h3 class="proj__t" id="sk-t">scikit-learn models</h3>
+          <p class="proj__line">K-means, KNN, Naive Bayes, random forests, SVMs and regression on classic datasets, each a self-contained script.</p>
+        </header>
+        <figure class="demo" data-demo="kmeans">
+          <figcaption class="demo__bar">
+            <span class="demo__lab mono">live</span>
+            <span class="demo__t">K-means on Palmer Penguins, running in your browser</span>
+          </figcaption>
+          <div class="ctrl">
+            <div class="seg seg--sm" role="radiogroup" aria-label="Number of clusters" data-k>
+              <button type="button" role="radio" data-v="2" aria-checked="false">k = 2</button>
+              <button type="button" role="radio" data-v="3" aria-checked="true">k = 3</button>
+              <button type="button" role="radio" data-v="4" aria-checked="false">k = 4</button>
+            </div>
+            <button class="run" type="button" data-run><span class="run__i" aria-hidden="true"></span><span data-run-l>Run</span></button>
+            <button class="btn btn--sm" type="button" data-reset>New seeds</button>
+          </div>
+          <div class="km">
+            <canvas class="km__c" role="img" aria-label="Scatter of 342 penguins by bill length and flipper length, coloured by cluster"></canvas>
+            <p class="km__read mono" data-read>342 penguins · press Run</p>
+          </div>
+          <p class="demo__key mono" aria-hidden="true"><span>shape = true species:</span><span>● Adelie</span><span>▲ Chinstrap</span><span>■ Gentoo</span><span>colour = cluster</span></p>
+        </figure>
+        <ul class="links links--dense">
+          <li><a href="https://github.com/MERC13/sci-kit-models/tree/main/K-Means-Clustering">K-means</a></li>
+          <li><a href="https://github.com/MERC13/sci-kit-models/tree/main/KNN">KNN</a></li>
+          <li><a href="https://github.com/MERC13/sci-kit-models/tree/main/Naive-Bayes">Naive Bayes</a></li>
+          <li><a href="https://github.com/MERC13/sci-kit-models/tree/main/Random-Forest">Random forest</a></li>
+          <li><a href="https://github.com/MERC13/sci-kit-models">All</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="page site-footer__inner">
-    <span>&copy; <span id="year">2026</span> Jonah Cha</span>
-    <span class="site-footer__mid">
-      No frameworks, no build step.
-      <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/MERC13/personal-website">Source</a>
-    </span>
-    <a class="link" href="#top">Back to top</a>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p class="foot__cta">Let’s talk: <a href="mailto:jonah_cha@berkeley.edu">jonah_cha@berkeley.edu</a></p>
+    <ul class="foot__list mono">
+      <li><a href="https://github.com/MERC13">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/jonah-cha-7610a12b8/">LinkedIn</a></li>
+      <li><a href="https://openreview.net/profile?id=~Jonah_Cha1">OpenReview</a></li>
+      <li><a href="https://github.com/MERC13/personal-website">Site source</a></li>
+      <li>Updated Oct 2026</li>
+    </ul>
   </div>
 </footer>
-
 </body>
 </html>

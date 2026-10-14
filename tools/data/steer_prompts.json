@@ -1,0 +1,290 @@
+{
+  "about": "Figure 3 panels, its table twin and the Start-here unit thumbnail. tools/figures.py reads this file; the site never does.",
+  "source": {
+    "repo": "https://github.com/MERC13/openpi",
+    "branch": "steering-rl",
+    "commit": "a5f19ee1f637556933d29ad4567ca532a3661c5a",
+    "commit_date": "2026-07-29",
+    "files": {
+      "locked": "steering_rl/results/phase_c_half_summary.json",
+      "candidate": "steering_rl/results/phase_c_candidates.md",
+      "gate_and_headroom": "steering_rl/README.md §4 tables (L69–75, L80–84)",
+      "spread_threshold": "steering_rl/libero/run_audit.py L32 (DEFAULT_SPREAD_THRESHOLD; first committed at 2fb8cb9422974163ad4f6a5889e0bcead6c82f05, L30)"
+    },
+    "note": "prompts[].line is the line of that prompt in source.path (the \"prompt\" key in the JSON file, the printed row in the Markdown file). Prompt strings are verbatim; k is episodes that met the BDDL goal predicate, n is episodes run. gate and headroom are the README §4 table values, with → written as \"to\"; readme keeps the row verbatim."
+  },
+  "spread_threshold": 0.15,
+  "margin": 0.0,
+  "categories": {"C": "canonical", "P": "paraphrase", "S": "subgoal", "M": "misleading"},
+  "category_order": ["C", "P", "S", "M"],
+  "sets": [
+    {"id": "locked", "label": "Locked set", "tasks": 5, "prompts_per_task": 10, "episodes_per_prompt": 10, "episodes": 500},
+    {"id": "candidate", "label": "Candidate screen", "tasks": 3, "prompts_per_task": 8, "episodes_per_prompt": 6, "episodes": 144}
+  ],
+  "base_checkpoint": {"model": "pi05_base", "k": 0, "n": 30, "readme_lines": [108, 109], "candidates_md_lines": [62, 63]},
+  "totals": {"episodes": 644, "prompts": 74},
+  "panels": [
+    {
+      "task": "LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket",
+      "title": "Soup and tomato sauce in basket",
+      "set": "locked",
+      "gate": "pass",
+      "headroom": "none (ceiling)",
+      "readme": {
+        "line": 71,
+        "task": "soup + tomato → basket",
+        "canonical": "1.00",
+        "best_prompt": "1.00",
+        "misleading": "0.00",
+        "spread": "0.20",
+        "gate": "pass",
+        "headroom": "none (ceiling)"
+      },
+      "source": {"path": "steering_rl/results/phase_c_half_summary.json", "lines": [245, 317]},
+      "k": 77,
+      "n": 100,
+      "prompts": [
+        {"cat": "C", "prompt": "put both the alphabet soup and the tomato sauce in the basket", "k": 10, "n": 10, "line": 245},
+        {"cat": "P", "prompt": "place both the alphabet soup and the tomato sauce into the basket", "k": 10, "n": 10, "line": 253},
+        {"cat": "P", "prompt": "move the alphabet soup and the tomato sauce into the basket", "k": 10, "n": 10, "line": 261},
+        {"cat": "P", "prompt": "pick up the alphabet soup and the tomato sauce and put them in the basket", "k": 10, "n": 10, "line": 269},
+        {"cat": "S", "prompt": "put the alphabet soup in the basket", "k": 10, "n": 10, "line": 277},
+        {"cat": "S", "prompt": "put the tomato sauce in the basket", "k": 10, "n": 10, "line": 285},
+        {"cat": "P", "prompt": "put the alphabet soup and the tomato sauce in the basket", "k": 9, "n": 10, "line": 293},
+        {"cat": "S", "prompt": "pick up the tomato sauce and place it in the basket", "k": 8, "n": 10, "line": 301},
+        {"cat": "M", "prompt": "put the black bowl in the bottom drawer of the cabinet and close it", "k": 0, "n": 10, "line": 309},
+        {"cat": "M", "prompt": "put both the cream cheese box and the butter in the basket", "k": 0, "n": 10, "line": 317}
+      ]
+    },
+    {
+      "task": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+      "title": "Soup and cream cheese in basket",
+      "set": "locked",
+      "gate": "fail",
+      "headroom": "none",
+      "readme": {
+        "line": 72,
+        "task": "soup + cream-cheese → basket",
+        "canonical": "1.00",
+        "best_prompt": "1.00",
+        "misleading": "0.80",
+        "spread": "0.00",
+        "gate": "fail",
+        "headroom": "none"
+      },
+      "source": {"path": "steering_rl/results/phase_c_half_summary.json", "lines": [165, 237]},
+      "k": 96,
+      "n": 100,
+      "prompts": [
+        {"cat": "C", "prompt": "put both the alphabet soup and the cream cheese box in the basket", "k": 10, "n": 10, "line": 165},
+        {"cat": "P", "prompt": "place both the alphabet soup and the cream cheese box into the basket", "k": 10, "n": 10, "line": 173},
+        {"cat": "P", "prompt": "put the alphabet soup and the cream cheese box in the basket", "k": 10, "n": 10, "line": 181},
+        {"cat": "P", "prompt": "move the alphabet soup and the cream cheese box into the basket", "k": 10, "n": 10, "line": 189},
+        {"cat": "P", "prompt": "pick up the alphabet soup and the cream cheese box and put them in the basket", "k": 10, "n": 10, "line": 197},
+        {"cat": "S", "prompt": "put the alphabet soup in the basket", "k": 10, "n": 10, "line": 205},
+        {"cat": "S", "prompt": "put the cream cheese box in the basket", "k": 10, "n": 10, "line": 213},
+        {"cat": "S", "prompt": "pick up the cream cheese box and place it in the basket", "k": 10, "n": 10, "line": 221},
+        {"cat": "M", "prompt": "put both the cream cheese box and the butter in the basket", "k": 9, "n": 10, "line": 229},
+        {"cat": "M", "prompt": "put the yellow and white mug in the microwave and close it", "k": 7, "n": 10, "line": 237}
+      ]
+    },
+    {
+      "task": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+      "title": "Cream cheese and butter in basket",
+      "set": "locked",
+      "gate": "fail",
+      "headroom": "none",
+      "readme": {
+        "line": 73,
+        "task": "cream-cheese + butter → basket",
+        "canonical": "1.00",
+        "best_prompt": "1.00",
+        "misleading": "0.25",
+        "spread": "0.00",
+        "gate": "fail",
+        "headroom": "none"
+      },
+      "source": {"path": "steering_rl/results/phase_c_half_summary.json", "lines": [325, 397]},
+      "k": 85,
+      "n": 100,
+      "prompts": [
+        {"cat": "C", "prompt": "put both the cream cheese box and the butter in the basket", "k": 10, "n": 10, "line": 325},
+        {"cat": "P", "prompt": "place both the cream cheese box and the butter into the basket", "k": 10, "n": 10, "line": 333},
+        {"cat": "P", "prompt": "put the cream cheese box and the butter in the basket", "k": 10, "n": 10, "line": 341},
+        {"cat": "P", "prompt": "move the cream cheese box and the butter into the basket", "k": 10, "n": 10, "line": 349},
+        {"cat": "P", "prompt": "pick up the cream cheese box and the butter and put them in the basket", "k": 10, "n": 10, "line": 357},
+        {"cat": "S", "prompt": "put the cream cheese box in the basket", "k": 10, "n": 10, "line": 365},
+        {"cat": "S", "prompt": "put the butter in the basket", "k": 10, "n": 10, "line": 373},
+        {"cat": "S", "prompt": "pick up the butter and place it in the basket", "k": 10, "n": 10, "line": 381},
+        {"cat": "M", "prompt": "put the black bowl in the bottom drawer of the cabinet and close it", "k": 5, "n": 10, "line": 389},
+        {"cat": "M", "prompt": "put both the alphabet soup and the tomato sauce in the basket", "k": 0, "n": 10, "line": 397}
+      ]
+    },
+    {
+      "task": "KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it",
+      "title": "Bowl in drawer, close it",
+      "set": "locked",
+      "gate": "fail",
+      "headroom": "none (prompt-invariant)",
+      "readme": {
+        "line": 74,
+        "task": "black-bowl → drawer + close",
+        "canonical": "0.90",
+        "best_prompt": "1.00",
+        "misleading": "0.95",
+        "spread": "0.10",
+        "gate": "fail",
+        "headroom": "none (prompt-invariant)"
+      },
+      "source": {"path": "steering_rl/results/phase_c_half_summary.json", "lines": [5, 77]},
+      "k": 97,
+      "n": 100,
+      "prompts": [
+        {"cat": "P", "prompt": "place the black bowl into the bottom drawer of the cabinet and close the drawer", "k": 10, "n": 10, "line": 5},
+        {"cat": "P", "prompt": "put the black bowl into the bottom drawer and close it", "k": 10, "n": 10, "line": 13},
+        {"cat": "P", "prompt": "stow the black bowl in the bottom drawer of the cabinet and close the drawer", "k": 10, "n": 10, "line": 21},
+        {"cat": "S", "prompt": "put the black bowl in the bottom drawer of the cabinet", "k": 10, "n": 10, "line": 29},
+        {"cat": "S", "prompt": "close the bottom drawer of the cabinet", "k": 10, "n": 10, "line": 37},
+        {"cat": "S", "prompt": "pick up the black bowl and place it in the bottom drawer", "k": 10, "n": 10, "line": 45},
+        {"cat": "M", "prompt": "put the yellow and white mug in the microwave and close it", "k": 10, "n": 10, "line": 53},
+        {"cat": "C", "prompt": "put the black bowl in the bottom drawer of the cabinet and close it", "k": 9, "n": 10, "line": 61},
+        {"cat": "P", "prompt": "move the black bowl into the cabinet's bottom drawer and shut it", "k": 9, "n": 10, "line": 69},
+        {"cat": "M", "prompt": "put both the alphabet soup and the tomato sauce in the basket", "k": 9, "n": 10, "line": 77}
+      ]
+    },
+    {
+      "task": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
+      "title": "Mug in microwave, close it",
+      "set": "locked",
+      "gate": "pass",
+      "headroom": "small (0.90 to 1.00)",
+      "readme": {
+        "line": 75,
+        "task": "mug → microwave + close",
+        "canonical": "0.90",
+        "best_prompt": "1.00",
+        "misleading": "0.40",
+        "spread": "0.30",
+        "gate": "pass",
+        "headroom": "small (0.90→1.00)"
+      },
+      "source": {"path": "steering_rl/results/phase_c_half_summary.json", "lines": [85, 157]},
+      "k": 79,
+      "n": 100,
+      "prompts": [
+        {"cat": "S", "prompt": "put the yellow and white mug in the microwave", "k": 10, "n": 10, "line": 85},
+        {"cat": "C", "prompt": "put the yellow and white mug in the microwave and close it", "k": 9, "n": 10, "line": 93},
+        {"cat": "P", "prompt": "place the yellow and white mug into the microwave and close the microwave", "k": 9, "n": 10, "line": 101},
+        {"cat": "P", "prompt": "put the yellow and white mug into the microwave and shut the door", "k": 9, "n": 10, "line": 109},
+        {"cat": "P", "prompt": "move the yellow and white mug into the microwave and close it", "k": 9, "n": 10, "line": 117},
+        {"cat": "P", "prompt": "stow the yellow and white mug in the microwave and close the door", "k": 9, "n": 10, "line": 125},
+        {"cat": "S", "prompt": "pick up the yellow and white mug and place it in the microwave", "k": 9, "n": 10, "line": 133},
+        {"cat": "S", "prompt": "close the microwave", "k": 7, "n": 10, "line": 141},
+        {"cat": "M", "prompt": "put the black bowl in the bottom drawer of the cabinet and close it", "k": 6, "n": 10, "line": 149},
+        {"cat": "M", "prompt": "put both the cream cheese box and the butter in the basket", "k": 2, "n": 10, "line": 157}
+      ]
+    },
+    {
+      "task": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "title": "Two mugs on two plates",
+      "set": "candidate",
+      "gate": "fail",
+      "headroom": "none (prompt-invariant)",
+      "readme": {
+        "line": 82,
+        "task": "white-mug→left, y/w-mug→right",
+        "canonical": "1.00",
+        "best_prompt": "1.00",
+        "misleading": "1.00",
+        "spread": "0.00",
+        "gate": "fail",
+        "headroom": "none (prompt-invariant)"
+      },
+      "source": {"path": "steering_rl/results/phase_c_candidates.md", "lines": [12, 19]},
+      "k": 47,
+      "n": 48,
+      "prompts": [
+        {"cat": "C", "prompt": "put the white mug on the left plate and put the yellow and white mug on the right plate", "k": 6, "n": 6, "line": 12},
+        {"cat": "P", "prompt": "place the white mug on the left plate and the yellow and white mug on the right plate", "k": 6, "n": 6, "line": 13},
+        {
+          "cat": "P",
+          "prompt": "put the white mug onto the left plate, then put the yellow and white mug onto the right plate",
+          "k": 6,
+          "n": 6,
+          "line": 14
+        },
+        {"cat": "S", "prompt": "put the white mug on the left plate", "k": 6, "n": 6, "line": 15},
+        {"cat": "S", "prompt": "put the yellow and white mug on the right plate", "k": 6, "n": 6, "line": 16},
+        {"cat": "S", "prompt": "pick up the white mug and place it on the left plate", "k": 6, "n": 6, "line": 17},
+        {"cat": "M", "prompt": "put the white mug on the right plate and the yellow and white mug on the left plate", "k": 6, "n": 6, "line": 18},
+        {"cat": "M", "prompt": "put both moka pots on the stove", "k": 5, "n": 6, "line": 19}
+      ]
+    },
+    {
+      "task": "LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate",
+      "title": "Mug on plate, pudding beside it",
+      "set": "candidate",
+      "gate": "pass",
+      "headroom": "small (0.83 to 1.00)",
+      "readme": {
+        "line": 83,
+        "task": "white-mug→plate, pudding→right",
+        "canonical": "0.83",
+        "best_prompt": "1.00",
+        "misleading": "0.92",
+        "spread": "0.83",
+        "gate": "pass",
+        "headroom": "small (0.83→1.00)"
+      },
+      "source": {"path": "steering_rl/results/phase_c_candidates.md", "lines": [23, 30]},
+      "k": 39,
+      "n": 48,
+      "prompts": [
+        {"cat": "C", "prompt": "put the white mug on the plate and put the chocolate pudding to the right of the plate", "k": 5, "n": 6, "line": 23},
+        {"cat": "P", "prompt": "place the white mug on the plate and put the chocolate pudding to the right of the plate", "k": 6, "n": 6, "line": 24},
+        {
+          "cat": "P",
+          "prompt": "put the white mug onto the plate, then set the chocolate pudding to the right of the plate",
+          "k": 6,
+          "n": 6,
+          "line": 25
+        },
+        {"cat": "S", "prompt": "put the white mug on the plate", "k": 5, "n": 6, "line": 26},
+        {"cat": "S", "prompt": "put the chocolate pudding to the right of the plate", "k": 5, "n": 6, "line": 27},
+        {"cat": "S", "prompt": "pick up the chocolate pudding and place it to the right of the plate", "k": 1, "n": 6, "line": 28},
+        {"cat": "M", "prompt": "put the white mug on the left plate and the yellow and white mug on the right plate", "k": 6, "n": 6, "line": 29},
+        {"cat": "M", "prompt": "put the chocolate pudding on the plate and the white mug to the right of the plate", "k": 5, "n": 6, "line": 30}
+      ]
+    },
+    {
+      "task": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it",
+      "title": "Stove on, moka pot on it",
+      "set": "candidate",
+      "gate": "pass",
+      "headroom": "none (ceiling)",
+      "readme": {
+        "line": 84,
+        "task": "turn-on-stove + moka-pot",
+        "canonical": "1.00",
+        "best_prompt": "1.00",
+        "misleading": "0.83",
+        "spread": "0.17",
+        "gate": "pass",
+        "headroom": "none (ceiling)"
+      },
+      "source": {"path": "steering_rl/results/phase_c_candidates.md", "lines": [34, 41]},
+      "k": 44,
+      "n": 48,
+      "prompts": [
+        {"cat": "C", "prompt": "turn on the stove and put the moka pot on it", "k": 6, "n": 6, "line": 34},
+        {"cat": "P", "prompt": "switch on the stove and place the moka pot on it", "k": 6, "n": 6, "line": 35},
+        {"cat": "P", "prompt": "turn the stove on and set the moka pot on the stove", "k": 6, "n": 6, "line": 36},
+        {"cat": "S", "prompt": "pick up the moka pot and place it on the stove", "k": 6, "n": 6, "line": 37},
+        {"cat": "S", "prompt": "turn on the stove", "k": 5, "n": 6, "line": 38},
+        {"cat": "S", "prompt": "put the moka pot on the stove", "k": 5, "n": 6, "line": 39},
+        {"cat": "M", "prompt": "put the black bowl in the bottom drawer of the cabinet and close it", "k": 5, "n": 6, "line": 40},
+        {"cat": "M", "prompt": "put the yellow and white mug in the microwave and close it", "k": 5, "n": 6, "line": 41}
+      ]
+    }
+  ]
+}

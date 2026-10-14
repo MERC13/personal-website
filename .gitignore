@@ -3,3 +3,10 @@ Thumbs.db
 .DS_Store
 .vscode/
 .idea/
+
+# Python bytecode from importing tools/figures.py
+__pycache__/
+*.pyc
+
+# Source notes for the UCSF demo; private working notes, not site content
+neuro_RESULTS.md

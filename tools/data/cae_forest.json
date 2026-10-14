@@ -1,0 +1,177 @@
+{
+  "about": "Figure 2 rows and the Start-here forest thumbnail. tools/figures.py reads this file; the site never does.",
+  "source": {
+    "repo": "https://github.com/MERC13/failure-detection-WM",
+    "commit": "b50bc2a689d0ccee66b0908a2fd3f0dfd2074f7f",
+    "commit_date": "2026-08-12",
+    "path": "PROGRESS.md",
+    "note": "Every value is a search − random_perturb replay-success difference with its 95% bootstrap CI, copied from the dated entry at lines[0]–lines[1] of PROGRESS.md at this commit; marks[].line is the line that prints it and n_lines is where the sample size is stated. The site links each row's lines with a pinned locator."
+  },
+  "min": -0.28,
+  "max": 0.46,
+  "ticks": [-0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4],
+  "groups": [
+    {"id": "deployable", "label": "Deployable: the method finds its own fault window"},
+    {"id": "oracle", "label": "Oracle fault window: not available to a deployed method"}
+  ],
+  "rows": [
+    {
+      "row": 1,
+      "group": "deployable",
+      "window": "Divergence heuristic",
+      "chooser": "CEM, goal-distance objective",
+      "n": 10,
+      "verdict": "No",
+      "marks": [
+        {"label": "λ 0.01", "est": 0.0, "lo": 0.0, "hi": 0.0, "line": 1372},
+        {"label": "λ 0.1", "est": 0.1, "lo": 0.0, "hi": 0.3, "line": 1373},
+        {"label": "λ 1", "est": 0.0, "lo": 0.0, "hi": 0.0, "line": 1374}
+      ],
+      "lines": [1368, 1374],
+      "n_lines": [1368, 1368],
+      "footnote": null
+    },
+    {
+      "row": 2,
+      "group": "deployable",
+      "window": "Divergence heuristic",
+      "chooser": "CEM, critic as objective",
+      "n": 56,
+      "verdict": "No",
+      "marks": [
+        {"label": "λ 0.01", "est": 0.018, "lo": 0.0, "hi": 0.054, "line": 1939},
+        {"label": "λ 0.1", "est": -0.018, "lo": -0.054, "hi": 0.0, "line": 1940},
+        {"label": "λ 1", "est": 0.036, "lo": 0.0, "hi": 0.089, "line": 1941}
+      ],
+      "lines": [1937, 1941],
+      "n_lines": [2003, 2003],
+      "footnote": null
+    },
+    {
+      "row": 3,
+      "group": "deployable",
+      "window": "Probe, fit on 56 episodes",
+      "chooser": "CEM, goal-distance objective",
+      "n": 56,
+      "verdict": "No",
+      "marks": [
+        {"label": "λ 0.01", "est": -0.054, "lo": -0.161, "hi": 0.054, "line": 1772},
+        {"label": "λ 0.1", "est": -0.125, "lo": -0.25, "hi": 0.0, "line": 1773},
+        {"label": "λ 1", "est": -0.054, "lo": -0.125, "hi": 0.018, "line": 1774}
+      ],
+      "lines": [1770, 1774],
+      "n_lines": [1767, 1767],
+      "footnote": null
+    },
+    {
+      "row": 4,
+      "group": "deployable",
+      "window": "Probe, fit on 56 episodes",
+      "chooser": "CEM, critic as objective",
+      "n": 56,
+      "verdict": "No",
+      "marks": [
+        {"label": "λ 0.01", "est": -0.054, "lo": -0.125, "hi": 0.0, "line": 1999},
+        {"label": "λ 0.1", "est": 0.018, "lo": -0.071, "hi": 0.107, "line": 2000},
+        {"label": "λ 1", "est": 0.0, "lo": -0.054, "hi": 0.054, "line": 2001}
+      ],
+      "lines": [1997, 2001],
+      "n_lines": [2003, 2003],
+      "footnote": null
+    },
+    {
+      "row": 5,
+      "group": "deployable",
+      "window": "Probe, fit on 56 episodes",
+      "chooser": "Critic re-ranks CEM’s 4 candidates",
+      "n": 56,
+      "verdict": "No",
+      "marks": [{"label": null, "est": 0.036, "lo": -0.036, "hi": 0.107, "line": 2329}],
+      "lines": [2322, 2329],
+      "n_lines": [2317, 2317],
+      "footnote": "a"
+    },
+    {
+      "row": 6,
+      "group": "deployable",
+      "window": "Probe, fit on 160 episodes",
+      "chooser": "Critic re-ranks CEM’s 4 candidates",
+      "n": 56,
+      "verdict": "No",
+      "marks": [{"label": null, "est": 0.036, "lo": -0.036, "hi": 0.107, "line": 2396}],
+      "lines": [2391, 2396],
+      "n_lines": [2392, 2392],
+      "footnote": "a"
+    },
+    {
+      "row": 7,
+      "group": "deployable",
+      "window": "Probe, fit on 160 episodes",
+      "chooser": "Ensemble-driven CEM, critic re-ranks",
+      "n": 56,
+      "verdict": "No",
+      "marks": [{"label": null, "est": 0.036, "lo": -0.036, "hi": 0.107, "line": 2475}],
+      "lines": [2474, 2476],
+      "n_lines": [2478, 2478],
+      "footnote": "a"
+    },
+    {
+      "row": 8,
+      "group": "deployable",
+      "window": "Probe, fit on 160 episodes; top 3 windows",
+      "chooser": "Critic re-ranks all 12 candidates",
+      "n": 56,
+      "verdict": "No",
+      "marks": [{"label": null, "est": -0.018, "lo": -0.071, "hi": 0.036, "line": 2551}],
+      "lines": [2539, 2551],
+      "n_lines": [2543, 2543],
+      "footnote": null
+    },
+    {
+      "row": 9,
+      "group": "oracle",
+      "window": "Ground-truth fault window",
+      "chooser": "Critic re-ranks CEM’s 4 candidates",
+      "n": 56,
+      "verdict": "Yes",
+      "marks": [
+        {"label": "seed 0", "est": 0.25, "lo": 0.107, "hi": 0.393, "line": 2246},
+        {"label": "seed 1", "est": 0.268, "lo": 0.125, "hi": 0.429, "line": 2247}
+      ],
+      "lines": [2232, 2252],
+      "n_lines": [2232, 2232],
+      "footnote": "b"
+    },
+    {
+      "row": 10,
+      "group": "oracle",
+      "window": "Ground-truth fault window",
+      "chooser": "CEM, goal-distance objective",
+      "n": 56,
+      "verdict": "No",
+      "marks": [
+        {"label": "λ 0.01", "est": 0.125, "lo": -0.036, "hi": 0.304, "line": 1506},
+        {"label": "λ 0.1", "est": -0.018, "lo": -0.161, "hi": 0.143, "line": 1507},
+        {"label": "λ 1", "est": -0.018, "lo": -0.125, "hi": 0.089, "line": 1508}
+      ],
+      "lines": [1502, 1508],
+      "n_lines": [1502, 1502],
+      "note": "All three CIs include 0.",
+      "footnote": null
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "a",
+      "rows": [5, 6, 7],
+      "lines": [[2392, 2392], [2478, 2486]],
+      "text": "Rows 5 to 7 print the same numbers by coincidence, and the log checked it: rows 5 and 6 drew different episodes (27 of 56 shared); row 7 reused row 6’s episodes, and only 2 of 56 outcomes changed, one each way (L2392, L2478–2486)."
+    },
+    {
+      "id": "b",
+      "rows": [9],
+      "lines": [[2245, 2245], [2251, 2252]],
+      "text": "Row 9’s McNemar test (6 episodes fixed, 0 broken, p ≈ 0.041) compares re-ranking with CEM’s own best pick, not with random (L2245, L2251–2252)."
+    }
+  ]
+}
